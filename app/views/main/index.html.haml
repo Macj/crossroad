@@ -1,0 +1,8 @@
+.main
+  - @categories.each do |category|
+    .category
+      %span.menu_item{:children => category.name + "children"}
+        = link_to category.name, category_path(category)
+      %ul{:id => category.name + "children"}
+        - category.children.each do |child|
+          %li= link_to child.name, category_path(child)

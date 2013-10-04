@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fio: MyString
+  role: MyString
+  photo: 
+  info: MyText
+  activity: MyText
+
+two:
+  fio: MyString
+  role: MyString
+  photo: 
+  info: MyText
+  activity: MyText

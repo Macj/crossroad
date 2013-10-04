@@ -1,0 +1,5 @@
+.main
+  %span= @category.name
+  %ul
+    - @category.children.each do |child|
+      %li= child.name

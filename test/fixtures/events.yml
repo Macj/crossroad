@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  category_id: 1
+  type_id: 1
+  begin_date: 2013-10-02
+  end_date: 2013-10-02
+  place_id: 1
+  galery_id: 1
+  description: MyText
+
+two:
+  name: MyString
+  category_id: 1
+  type_id: 1
+  begin_date: 2013-10-02
+  end_date: 2013-10-02
+  place_id: 1
+  galery_id: 1
+  description: MyText
