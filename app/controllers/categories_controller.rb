@@ -1,5 +1,6 @@
+#encoding: utf-8
 class CategoriesController < ApplicationController
-  protect_from_forgery
+  #protect_from_forgery
 
   def index
     @categories = Category.all

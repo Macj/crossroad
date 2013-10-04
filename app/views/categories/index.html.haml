@@ -1,4 +1,5 @@
-.main 	
+.main
+  = @categories.debug
   - @categories.each do |category|
     .category
       %span.menu_item{:children => category.name + "children"}
