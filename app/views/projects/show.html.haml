@@ -1,0 +1,13 @@
+.main_block
+  #project_name
+    %span= @project.name
+  #project_info
+    %span= @project.category.name
+    %br
+    %span= @project.type.name
+  #project_body
+    %span= @project.description
+  #project_source
+    %span= @project.web_links
+    %br
+    %span= @project.created_at.strftime(" %H:%M %d.%m.%Y")

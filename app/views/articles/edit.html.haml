@@ -1,0 +1,4 @@
+.main
+  .edit_block{:style => "margin-left: -150px"}
+    %span Изменить статью
+    = render :partial => 'form', :locals => {:article => @article}

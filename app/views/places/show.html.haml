@@ -1,0 +1,13 @@
+.main_block
+  #place_name
+    %span= @place.name
+  #place_info
+    %span= @place.category.name
+    %br
+    %span= @place.type.name
+  #place_body
+    %span= @place.description
+  #place_source
+    %span= @place.web_links
+    %br
+    %span= @place.created_at.strftime(" %H:%M %d.%m.%Y")

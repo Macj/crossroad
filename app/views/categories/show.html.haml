@@ -1,5 +1,52 @@
-.main
-  %span= @category.name
-  %ul
-    - @category.children.each do |child|
-      %li= child.name
+= javascript_include_tag "categories/category_page_behavior"
+.main_block
+  #category_name
+    %span= @category.name
+  .main_left
+    .section_block
+      %ul#sections 
+        %li= link_to 'Статьи', section_path('article'), {:id => "article", :class => 'section'}
+        %li= link_to 'События', section_path('event'), {:id => "event", :class => 'section'}
+        %li= link_to 'Места', section_path('place'),{:id => "place", :class => 'section'}
+        %li= link_to 'Проекты', section_path('project'), {:id => "project", :class => 'section'}
+        /%li{:id => "#person"}= link_to 'Лица', section_path('person')
+
+    .filters
+      %span= 'Фильтры'
+      #data_filter
+        %span= 'По дате'
+        %label От
+        %input{:name => 'date_from', :size => 5}
+        %label До
+        %input{:name => 'date_from', :size => 5}
+      #type_filter
+        %span= 'По типу'
+        %input{:name => 'date_from', :size => 5, :type => :select}
+  .main_right
+    .view
+      %span= "Вид"
+      %img
+      %img
+      %img
+    .content
+      #article_content.content_block
+        %ul.items.table
+        %ul.items.line
+        = render :partial => '/articles/content', :locals => {:content => @article_content}
+      #event_content.content_block{:style => "display:none"}
+        %ul.items.table
+        %ul.items.line
+        = render :partial => '/events/content', :locals => {:content => @event_content}
+      #place_content.content_block{:style => "display:none"}
+        %ul.items.table
+        %ul.items.line
+        = render :partial => '/places/content', :locals => {:content => @place_content}
+      #project_content.content_block{:style => "display:none"}
+        %ul.items.table
+        %ul.items.line
+        = render :partial => '/projects/content', :locals => {:content => @project_content}
+      / .person_content
+      /   %ul.items.table
+      /   %ul.items.line
+      /   = render :partial => '/people/content', :locals => {:content => @people_content}
+           

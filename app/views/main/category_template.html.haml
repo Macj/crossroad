@@ -1,0 +1,67 @@
+.main_block
+  #category_name
+    %span= 'Название категории'
+  .main_left
+    .section_block
+      %ul#sections 
+        %li{:id => "#article_section"}= link_to 'Статьи', section_path('article')
+        %li{:id => "#event_section"}= link_to 'События', section_path('event')
+        %li{:id => "#place_section"}= link_to 'Места', section_path('place')
+        %li{:id => "#project_section"}= link_to 'Проекты', section_path('project')
+        %li{:id => "#person_section"}= link_to 'Лица', section_path('person')
+
+    .filters
+      %span= 'Фильтры'
+      #data_filter
+        %span= 'По дате'
+        %label От
+        %input{:name => 'date_from', :size => 5}
+        %label До
+        %input{:name => 'date_from', :size => 5}
+      #type_filter
+        %span= 'По типу'
+        %input{:name => 'date_from', :size => 5, :type => :select}
+  .main_right
+    .view
+      %span= "Вид"
+      %img
+      %img
+      %img
+    .content
+      %ul.items.table
+      %ul.items.line
+      %ul.items.thumb
+        %li.item
+          %img.icon{:src => '/1.jpeg', :width=>"65", :height=>"65"}
+          .item_info 
+            %span.item_name Театр псих обльницы 1
+            %p 
+              сколько заклчённых
+              сколько учавствовали в представлении
+              где находиться и дата представления
+          .description
+            Такой замечательный театр, И не холодно совсем, и не дует из окна, и актёры профессоналы,
+            только радоваться и лицезреть.
+        %li.item
+          %img.icon{:src => '/1.jpeg', :width=>"65", :height=>"65"}
+          .item_info 
+            %span.item_name Театр псих обльницы 1
+            %p 
+              сколько заклчённых
+              сколько учавствовали в представлении
+              где находиться и дата представления
+          .description
+            Такой замечательный театр, И не холодно совсем, и не дует из окна, и актёры профессоналы,
+            только радоваться и лицезреть.
+        %li.item
+          %img.icon{:src => '/1.jpeg', :width=>"65", :height=>"65"}
+          .item_info 
+            %span.item_name Театр псих обльницы 1
+            %p 
+              сколько заклчённых
+              сколько учавствовали в представлении
+              где находиться и дата представления
+          .description
+            Такой замечательный театр, И не холодно совсем, и не дует из окна, и актёры профессоналы,
+            только радоваться и лицезреть.
+

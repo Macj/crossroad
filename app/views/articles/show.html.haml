@@ -1,0 +1,15 @@
+.main_block
+  #article_name
+    %span= @article.name
+  #article_info
+    %span= @article.category.name
+    %br
+    %span= @article.type.name
+    %br
+    %span= @article.autor
+  #article_body
+    %span= @article.body
+  #article_source
+    %span= @article.sources
+    %br
+    %span= @article.created_at.strftime(" %H:%M %d.%m.%Y")

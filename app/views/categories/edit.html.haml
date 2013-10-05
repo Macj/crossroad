@@ -1,0 +1,7 @@
+.main
+  .edit_block{:style => "margin-left: -150px"}
+    %span Изменить категорию
+    = form_for  @category, :url => category_path(@category),  :as => :category do |f|
+      = f.label :name, 'Название'
+      = f.text_field :name
+      = f.submit "Сохраніть"

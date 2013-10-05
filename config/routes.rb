@@ -29,6 +29,7 @@ Crossroad::Application.routes.draw do
   resources :articles
   resources :projects
   resources :events
+  resources :places
 
   # Sample resource route with sub-resources:
   #   resources :products do
@@ -62,6 +63,8 @@ Crossroad::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
   match "template", :controller => 'main', :action => 'template'
+  match "category_template", :controller => 'main', :action => 'category_template'
+  
   match "section/(:section)", :controller => 'main', :action => 'section', :as => :section
 
 end

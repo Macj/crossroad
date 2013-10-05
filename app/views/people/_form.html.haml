@@ -1,0 +1,20 @@
+= form_for  article || Article.new,  :as => :article do |f|
+  = f.label :category_id, 'Категория'
+  = f.select :category_id, Category.all.map{|e| [e.name, e.id]}
+  %br
+  = f.label :type_id, 'Тип'
+  = f.select :type_id, Type.all.map{|e| [e.name, e.id]}
+  %br
+  = f.label :name, 'Название'
+  = f.text_field :name
+  %br
+  = f.label :autor, 'Автор'
+  = f.text_field :autor
+  %br
+  = f.label :body, 'Содержание'
+  = f.text_area :body
+  %br
+  = f.label :sources, 'Источники'
+  = f.text_area :sources
+  %br
+  = f.submit "Сохраніть"

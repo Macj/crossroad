@@ -21,6 +21,23 @@
   left: 50%;
 }
 
+.main_block{
+  border: 2px solid green;
+  height: 756px;
+}
+.main_left{
+  border: 2px solid gray;
+  float:left;
+  height: 95%;
+  width: 20%;
+}
+.main_right{
+  border: 2px solid gray;
+  float:left;
+  height: 95%;
+  margin-left: 3%;
+  width: 69%;
+}
 
 .sections{
   clear: left;
@@ -30,6 +47,13 @@
   position: absolute;
   margin: -100px 0 0 0;
   top: 50%;
+}
+
+.content_block{
+  display: block;
+  height: 25%;
+  margin-top: 20px;
+  clear: both;
 }
 
 .team{
@@ -46,3 +70,58 @@ bottom: 8%;
   float: right;
   color: grey;
 }
+
+/* Section menu view */
+.active{
+  color: green;
+}
+
+/****************/
+
+/* Content view */
+.item_name{
+  display: block;
+  clear: right;
+}
+
+.item img.icon{
+  display: block;
+  float: left;
+}
+/****************/
+
+
+/*** Thumb block view */
+.thumb .item{
+  float: left;
+  height: 70px;
+  width: 300px;
+  margin: 0 10px 10px 0;
+}
+
+.thumb .item_info>p{
+  height: 40px;
+  /* width: 300px;*/
+  margin: 0 0 0 0;
+}
+
+.thumb .description, .thumb .body {
+ display:none; 
+}
+
+/* End Thumb block view  end */
+/**********************/
+
+
+/*** Line block view */
+
+/* End Line block view */
+/**********************/
+
+
+/*** Table block view */
+
+
+
+/* End Table block view end */
+/**********************/

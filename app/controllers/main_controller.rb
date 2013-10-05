@@ -2,11 +2,11 @@
 class MainController < ApplicationController
   #protect_from_forgery
   SECTIONS = {
-    'Article' => 'Статьи',
-    'Event'   => 'События',
-    'Place'   => 'Места',
-    'Project' => 'Проекты',
-    'Person'  => 'Лица',
+    'article' => 'Статьи',
+    'event'   => 'События',
+    'place'   => 'Места',
+    'project' => 'Проекты',
+    'person'  => 'Лица',
   }
 
   def index
@@ -16,6 +16,7 @@ class MainController < ApplicationController
 
   def section
     @section = SECTIONS.select{|k,v| k == params[:section]}.first
+    
   end  
 end
 

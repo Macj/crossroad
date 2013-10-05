@@ -1,0 +1,23 @@
+= form_for  event || Event.new,  :as => :event do |f|
+  = f.label :category_id, 'Категория'
+  = f.select :category_id, Category.all.map{|e| [e.name, e.id]}
+  %br
+  = f.label :type_id, 'Тип'
+  = f.select :type_id, Type.all.map{|e| [e.name, e.id]}
+  %br
+  = f.label :name, 'Название'
+  = f.text_field :name
+  %br
+  = f.label :begin_date, 'дата начала'
+  = f.text_field :begin_date
+  %br
+  = f.label :end_date, 'дата конца'
+  = f.text_field :end_date
+  %br
+  = f.label :description, 'Описание'
+  = f.text_area :description
+  %br
+  = f.label :web_links, 'Источники'
+  = f.text_area :web_links
+  %br
+  = f.submit "Сохраніть"

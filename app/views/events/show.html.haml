@@ -1,0 +1,17 @@
+.main_block
+  #event_name
+    %span= @event.name
+  #event_info
+    %span= @event.category.name
+    %br
+    %span= @event.type.name
+    %br
+    %span= @event.begin_date.strftime(" %H:%M %d.%m.%Y")
+    = "-"
+    %span= @event.end_date.strftime(" %H:%M %d.%m.%Y")
+  #event_body
+    %span= @event.description
+  #event_source
+    %span= @event.web_links
+    %br
+    %span= @event.created_at.strftime(" %H:%M %d.%m.%Y")

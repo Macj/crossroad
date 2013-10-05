@@ -1,0 +1,17 @@
+= form_for  place || Place.new,  :as => :place do |f|
+  = f.label :category_id, 'Категория'
+  = f.select :category_id, Category.all.map{|e| [e.name, e.id]}
+  %br
+  = f.label :type_id, 'Тип'
+  = f.select :type_id, Type.all.map{|e| [e.name, e.id]}
+  %br
+  = f.label :name, 'Название'
+  = f.text_field :name
+  %br
+  = f.label :description, 'Содержание'
+  = f.text_area :description
+  %br
+  = f.label :web_links, 'Источники'
+  = f.text_area :web_links
+  %br
+  = f.submit "Сохраніть"
