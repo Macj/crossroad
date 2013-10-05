@@ -1,3 +1,24 @@
+.heder
+  .left
+    = "Днепровский Перекрёсток"
+  .right
+    = 'Картинка солнышка'
+    = '+18C' 
+    &deg;
+
+.sections
+  %ul#sections
+    %li#Article_section
+      = '<a href="/section/Article">Статьи</a>'.html_safe
+    %li#Event_section
+      = '<a href="/section/Event">События</a>'.html_safe
+    %li#Place_section
+      = '<a href="/section/Place">Места</a>'.html_safe
+    %li#Project_section
+      = '<a href="/section/Project">Проекты</a>'.html_safe
+    %li#Person_section
+      = '<a href="/section/Person">Лица</a>'.html_safe
+
 .main 	
   .category
     %span.menu_item{:children => "test1"}
@@ -7,3 +28,24 @@
       %li= link_to 'Кино', "#"
       %li= link_to 'Музыка', "#"
       %li= link_to 'Литература', "#"
+  .category
+    %span.menu_item{:children => "test2"}
+      = link_to "Культура", "#"
+    %ul{:id => "test2" }
+      %li= link_to 'Театр', "#"
+      %li= link_to 'Кино', "#"
+      %li= link_to 'Музыка', "#"
+      %li= link_to 'Литература', "#"
+  .category
+    %span.menu_item{:children => "test3"}
+      = link_to "Культура", "#"
+    %ul{:id => "test3" }
+      %li= link_to 'Театр', "#"
+      %li= link_to 'Кино', "#"
+      %li= link_to 'Музыка', "#"
+      %li= link_to 'Литература', "#"
+
+.team
+  %span Команда
+  %span
+    %b Crossroad

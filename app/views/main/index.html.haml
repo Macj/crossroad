@@ -1,3 +1,15 @@
+.heder
+  .left
+    = "Днепровский Перекрёсток"
+  .right
+    = 'Картинка солнышка'
+    = '+18C' 
+    &deg;
+.sections
+  %ul#sections 
+    - @sections.each do |key, val|
+      %li{:id => "#{key}_section"}= link_to val, section_path(key)
+
 .main 	
   - @categories.each do |category|
     .category
@@ -6,3 +18,8 @@
       %ul{:id => category.name + "children"}
         - category.children.each do |child|
           %li= link_to child.name, category_path(child)
+
+.team
+  %span Команда
+  %span
+    %b Crossroad

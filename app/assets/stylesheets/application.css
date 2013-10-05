@@ -16,7 +16,33 @@
   position: absolute;
   height: 200px;
   width: 400px;
-  margin: -100px 0 0 -200px;
+  
   top: 50%;
   left: 50%;
+}
+
+
+.sections{
+  clear: left;
+  border: 2px solid grey ;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  margin: -100px 0 0 0;
+  top: 50%;
+}
+
+.team{
+position: absolute;
+margin-left:40px;
+bottom: 8%;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+  float: right;
+  color: grey;
 }
