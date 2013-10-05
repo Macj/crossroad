@@ -1,4 +1,4 @@
-namespace "Neatform.MenuBehavior", (exports) ->
+namespace "MenuBehavior", (exports) ->
   
   behavior_on_menu_click = (e) ->
     e.preventDefault()
@@ -11,8 +11,10 @@ namespace "Neatform.MenuBehavior", (exports) ->
   exports.initialize = () ->
     fields = document.getElementsByClassName('menu_item')
     for field in  fields
+      child = field.getAttribute('children')
+      $(document.getElementById("#{child}")).hide()
       bind_event field, 'click', behavior_on_menu_click
     
     
 domReady ->
-  Neatform.MenuBehavior.initialize()
+  MenuBehavior.initialize()
