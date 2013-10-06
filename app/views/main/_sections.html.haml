@@ -1,0 +1,4 @@
+.sections
+  %ul#sections 
+    - sections.each do |key, val|
+      %li{:id => "#{key}_section"}= link_to val, section_path(key)

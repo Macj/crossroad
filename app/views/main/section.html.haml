@@ -1,7 +1,29 @@
-.main 
-  %span
-    Объект
-    = @section[0]
-  %span
-    Название
-    = @section[1]
+= javascript_include_tag "main/section_page_behavior"
+.main_block
+  #section_name
+    %img.icon#sections_selector{:src => '/4.jpg', :width=>"35", :height=>"35"}
+    %span= @section[1]
+    = render :partial => 'sections', :locals => {:sections => @sections}
+  .main_left
+    .category_block
+      %span Категории
+      - @categories.each do |category|
+        .category
+          %span.menu_item{:children => category.name + "children"}
+            = link_to category.name, category_path(category), :class => 'category_item', :id => "category_#{category.id}"
+          %ul{:id => category.name + "children"}
+            - category.children.each do |child|
+              %li= link_to child.name, category_path(child), :class => 'category_item', :id => "category_#{child.id}" 
+
+    = render :partial => 'filters'
+  .main_right
+    .view
+      %span= "Вид"
+      %img
+      %img
+      %img
+    .content
+      #article_content.content_block
+        %ul.items.table
+        %ul.items.line
+        = render :partial => "/#{@section[0].pluralize}/content", :locals => {:content => @content}

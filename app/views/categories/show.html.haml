@@ -4,24 +4,14 @@
     %span= @category.name
   .main_left
     .section_block
+      %span Разделы
       %ul#sections 
         %li= link_to 'Статьи', section_path('article'), {:id => "article", :class => 'section'}
         %li= link_to 'События', section_path('event'), {:id => "event", :class => 'section'}
         %li= link_to 'Места', section_path('place'),{:id => "place", :class => 'section'}
         %li= link_to 'Проекты', section_path('project'), {:id => "project", :class => 'section'}
-        /%li{:id => "#person"}= link_to 'Лица', section_path('person')
 
-    .filters
-      %span= 'Фильтры'
-      #data_filter
-        %span= 'По дате'
-        %label От
-        %input{:name => 'date_from', :size => 5}
-        %label До
-        %input{:name => 'date_from', :size => 5}
-      #type_filter
-        %span= 'По типу'
-        %input{:name => 'date_from', :size => 5, :type => :select}
+    = render :partial => 'main/filters'
   .main_right
     .view
       %span= "Вид"

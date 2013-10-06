@@ -1,3 +1,4 @@
+= javascript_include_tag "main/index"
 .heder
   .left
     = "Днепровский Перекрёсток"
@@ -5,10 +6,8 @@
     = 'Картинка солнышка'
     = '+18C' 
     &deg;
-.sections
-  %ul#sections 
-    - @sections.each do |key, val|
-      %li{:id => "#{key}_section"}= link_to val, section_path(key)
+    
+= render :partial => 'sections', :locals => {:sections => @sections}
 
 .main 	
   - @categories.each do |category|

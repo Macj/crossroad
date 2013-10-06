@@ -17,4 +17,3 @@
 //= require tools/namespace
 //= require tools/toolbox
 
-//= require main/index

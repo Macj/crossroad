@@ -1,6 +1,6 @@
 %ul.items.thumb
   - content.each do |item|
-    %li.item
+    %li.item{:category => "category_#{item.category_id}"}
       %img.icon{:src => '/1.jpeg', :width=>"65", :height=>"65"}
       .item_info 
         %span.item_name= item.name

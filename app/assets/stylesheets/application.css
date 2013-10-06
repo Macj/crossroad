@@ -49,6 +49,14 @@
   top: 50%;
 }
 
+.category_block{
+  margin-bottom: 10px
+}
+
+.section_block{
+  margin-bottom: 10px
+}
+
 .content_block{
   display: block;
   height: 25%;

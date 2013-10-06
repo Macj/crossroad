@@ -8,15 +8,21 @@ class MainController < ApplicationController
     'project' => 'Проекты',
     'person'  => 'Лица',
   }
+  before_filter :sections_init
 
   def index
     @categories = Category.main
-    @sections = SECTIONS
   end
 
   def section
     @section = SECTIONS.select{|k,v| k == params[:section]}.first
-    
+    @categories = Category.main
+    @content = eval(@section[0].humanize).all
   end  
+
+  private
+    def sections_init
+      @sections = SECTIONS
+    end
 end
 
