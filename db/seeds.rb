@@ -63,5 +63,3 @@ Project.create( name: "Проект8", category_id: 8, type_id: 7,  description:
 
 
 
-
-

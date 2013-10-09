@@ -1,0 +1,33 @@
+.category .menu_item{
+	display: block;
+	border: 2px solid gray;
+	border-radius: 10px;
+	height: 30px;
+	width: 80px;
+	margin-bottom: 5px;
+	vertical-align: center;
+}
+
+.category .menu_item a{
+	display: block;
+	margin-top: 5px;
+	text-decoration: none;
+	color: lightblue;
+
+}
+.category ul{
+	position: absolute;
+	margin-top: -50px;
+	margin-left: 100px;
+	//width: 200px;
+	//height: 100%;
+	border: 1px solid;
+	padding: 5px 5px 5px 5px;
+}
+
+.category ul>li{
+	list-style: none;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
