@@ -31,40 +31,42 @@ class MainController < ApplicationController
         :picture     => element[:picture]
       }
       case element[:section]
-      when :article
+      when "article"
         article = element[:article]
-        parameters += {
+        parameters.merge!( {
           :autor   => article[:autor],
           :body    => article[:body],
-          :sources => article[:sources],
-        }
-      when :event
+          :sources => article[:sources]
+        })
+      when "event"
         event = element[:event]
-        parameters += {
+        parameters.merge!({
           :begin_date  => event[:begin_date],
           :end_date    => event[:end_date],
           :description => event[:description],
           :web_links   => event[:web_links]
-        }
-      when :project
+        })
+      when "project"
         project = element[:project]
-        parameters += {
+        parameters.merge!({
           :description => project[:description],
           :web_links   => project[:web_links]
-        }
-      when :place
+        })
+      when "place"
         place = element[:place]
-        parameters += {
+        parameters.merge!({
           :description => place[:description],
           :web_links   => place[:web_links]
-        }
+        })
       else
         flash[:error] = 'Неизвестный тип объекта. Повторите попытку.'
         @error = true
       end
       #creation of the some thing
+      puts @error
+      puts flash.inspect
       unless @error
-        class_obj = eval(element[:section])
+        class_obj = eval(element[:section].humanize)
         @thing = class_obj.new(parameters)
         if @thing.save
           redirect_to @thing

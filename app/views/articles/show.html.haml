@@ -6,7 +6,7 @@
   #article_info
     %span= @article.category.name
     %br
-    %span= @article.type.name
+    %span= @article.type.name if @article.type
     %br
     %span= @article.autor
   #article_body
