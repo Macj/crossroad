@@ -45,12 +45,10 @@ Crossroad::Application.routes.draw do
   #     end
   #   end
 
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  namespace :api do
+    match '/type_list', :action => "type_list", :via => [:get, :post, :options], :format => "json"
+    #match '/check_manager_authorization', :action => "check_manager_authorization", :via => [:get, :post, :options], :format => "json"
+  end
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
@@ -66,5 +64,6 @@ Crossroad::Application.routes.draw do
   match "category_template", :controller => 'main', :action => 'category_template'
   
   match "section/(:section)", :controller => 'main', :action => 'section', :as => :section
+  match "make_new_one", :controller => 'main', :action => 'form', :as => :section, :as => :main_form
 
 end

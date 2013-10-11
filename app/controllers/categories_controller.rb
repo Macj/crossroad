@@ -13,6 +13,12 @@ class CategoriesController < ApplicationController
     @project_content = Project.where(:category_id => params[:id])
     @event_content = Event.where(:category_id => params[:id])
 
+    @section_type = params[:section_type]
+    request = Type.where(:category_id => @category.id)
+    if @section_type
+      request = request.where(:section_type => @section_type)
+    end
+    @types = request
     #Think about it
     #@people_content = Person.where(:category_id => params[:id])
   end

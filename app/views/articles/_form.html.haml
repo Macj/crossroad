@@ -1,4 +1,4 @@
-= form_for  article || Article.new,  :as => :article do |f|
+= form_for  article || Article.new,  :as => :article, multipart: true do |f|
   = f.label :category_id, 'Категория'
   = f.select :category_id, Category.all.map{|e| [e.name, e.id]}
   %br
@@ -16,5 +16,8 @@
   %br
   = f.label :sources, 'Источники'
   = f.text_area :sources
+  %br
+  = f.label :picture, 'Обложка'
+  = f.file_field :picture
   %br
   = f.submit "Сохраніть"

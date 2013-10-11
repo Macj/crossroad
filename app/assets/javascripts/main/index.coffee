@@ -1,4 +1,4 @@
-namespace "MenuBehavior", (exports) ->
+namespace "Main.MenuBehavior", (exports) ->
   
   behavior_on_menu_click = (e) ->
     e.preventDefault()
@@ -17,4 +17,4 @@ namespace "MenuBehavior", (exports) ->
     
     
 domReady ->
-  MenuBehavior.initialize()
+  Main.MenuBehavior.initialize()

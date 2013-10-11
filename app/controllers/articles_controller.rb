@@ -27,6 +27,10 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params[:article])
     if @article.save
+      uploaded_io = params[:article][:picture]
+      File.open(Rails.root.join('data', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
       redirect_to article_path(@article)
     else
       flash[:error] =  @article.errors.to_s

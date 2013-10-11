@@ -1,4 +1,6 @@
 .main_block
+  #picture
+    = link_to image_tag(@article.picture.url(:medium)), article_path(@article)
   #article_name
     %span= @article.name
   #article_info

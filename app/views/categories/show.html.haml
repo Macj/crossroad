@@ -11,7 +11,7 @@
         %li= link_to 'Места', section_path('place'),{:id => "place", :class => 'section'}
         %li= link_to 'Проекты', section_path('project'), {:id => "project", :class => 'section'}
 
-    = render :partial => 'main/filters'
+    = render :partial => 'main/filters', :locals => {:types => @types}
   .main_right
     .view
       %span= "Вид"

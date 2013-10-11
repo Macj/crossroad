@@ -29,6 +29,12 @@ window.target_of_event = (event) ->
     _target
   else null
 
+window.get_select_value = (inst) ->
+  if isIE8()
+    inst.options[inst.selectedIndex].value
+  else
+    inst.value
+
 # Element analyzers
 
 # window.clickable_element = (element) ->

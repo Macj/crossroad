@@ -15,7 +15,7 @@
             - category.children.each do |child|
               %li= link_to child.name, category_path(child), :class => 'category_item', :id => "category_#{child.id}" 
 
-    = render :partial => 'filters'
+    = render :partial => 'filters', :locals => {:types => @types}
   .main_right
     .view
       %span= "Вид"

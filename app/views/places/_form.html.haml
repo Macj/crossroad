@@ -8,10 +8,13 @@
   = f.label :name, 'Название'
   = f.text_field :name
   %br
-  = f.label :description, 'Содержание'
+  = f.label :description, 'Описание'
   = f.text_area :description
   %br
   = f.label :web_links, 'Источники'
   = f.text_area :web_links
+  %br
+  = f.label :picture, 'Фото'
+  = f.file_field :picture
   %br
   = f.submit "Сохраніть"

@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+ .hidden{
+  display: none
+ }
+
 .main{
   position: absolute;
   height: 200px;

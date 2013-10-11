@@ -1,0 +1,69 @@
+= javascript_include_tag "main/form_behavior"
+
+- if @thing and @thing.errors
+  .error_block
+    - @thing.errors.each do |error|
+      .error= error.to_s
+
+
+= form_for :element,  :as => :article, :url => main_form_path do |f|
+  = f.label :category_id, 'Категория'
+  = f.select :category_id, Category.all.map{|e| [e.name, e.id]}
+  %br
+  = f.label "section", 'Раздел'
+  = f.select "section", [["",""]] + @sections.map{|key, val| [val, key]}
+  #type_fields.hidden
+    %br
+    = f.label :type_id, 'Тип'
+    = f.select :type_id, ["",""]
+    %br
+    = f.label :name, 'Название'
+    = f.text_field :name
+
+  #article_fields.hidden
+    %br
+    = f.label 'article[autor]', 'Автор'
+    = f.text_field 'article[autor]'
+    %br
+    = f.label 'article[body]', 'Содержание'
+    = f.text_area 'article[body]'
+    %br
+    = f.label 'article[sources]', 'Источники'
+    = f.text_area 'article[sources]'
+
+  #event_fields.hidden
+    %br
+    = f.label 'event[begin_date]', 'дата начала'
+    = f.text_field 'event[begin_date]'
+    %br
+    = f.label 'event[end_date]', 'дата конца'
+    = f.text_field 'event[end_date]'
+    %br
+    = f.label 'event[description]', 'Описание'
+    = f.text_area 'event[description]'
+    %br
+    = f.label 'event[web_links]', 'Источники'
+    = f.text_area 'event[web_links]'
+
+  #place_fields.hidden
+    %br
+    = f.label 'place[description]', 'Описание'
+    = f.text_area 'place[description]'
+    %br
+    = f.label 'place[web_links]', 'Источники'
+    = f.text_area 'place[web_links]'
+
+  #project_fields.hidden
+    %br
+    = f.label 'project[description]', 'Содержание'
+    = f.text_area 'project[description]'
+    %br
+    = f.label 'project[web_links]', 'Источники'
+    = f.text_area 'project[web_links]'
+
+
+  %br
+  = f.label :picture, 'Фото'
+  = f.file_field :picture
+  %br
+  = f.submit "Сохраніть"

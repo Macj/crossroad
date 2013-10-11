@@ -11,8 +11,9 @@
 .category .menu_item a{
 	display: block;
 	margin-top: 5px;
+	margin-left: 5px;
 	text-decoration: none;
-	color: lightblue;
+	color: gray;
 
 }
 .category ul{

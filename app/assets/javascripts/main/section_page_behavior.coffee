@@ -1,4 +1,4 @@
-namespace "Section.PageBehavior", (exports) ->
+namespace "Main.SectionPageBehavior", (exports) ->
   
   behavior_on_sections_selector_click = (e) ->
     e.preventDefault()
@@ -35,4 +35,4 @@ namespace "Section.PageBehavior", (exports) ->
     
     
 domReady ->
-  Section.PageBehavior.initialize()
+  Main.SectionPageBehavior.initialize()

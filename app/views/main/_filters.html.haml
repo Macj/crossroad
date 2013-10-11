@@ -8,4 +8,4 @@
     %input{:name => 'date_from', :size => 5}
   #type_filter
     %span= 'По типу'
-    %input{:name => 'date_from', :size => 5, :type => :select}
+    = select_tag "date_from", options_from_collection_for_select(types, "id", "name")
