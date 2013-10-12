@@ -73,7 +73,6 @@ window.get_select_value = (inst) ->
 # parse_radio = (elements) ->
 #   return element.value() for element in elements when element.instance.checked
 #   return null
-ы
 
 # window.trace = (thing) ->
 #   if window.console

@@ -83,11 +83,23 @@ bottom: 8%;
   color: grey;
 }
 
+.plus{
+  //border: 1px solid #808080;
+  display: inline-block;
+  height: 25px;
+  margin-bottom: -10px;
+  width: 25px;
+}
+
 /* Section menu view */
 .active{
   color: green;
 }
 
+
+ .unactive{
+  //border: 1px solid red;
+ }
 /****************/
 
 /* Content view */

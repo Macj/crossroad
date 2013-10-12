@@ -20,6 +20,10 @@
     %br
     = f.label :type_id, 'Тип'
     = f.select :type_id, ["",""]
+    %img.plus#type_plus_btn{:src => '/images/plus.png'}
+  #new_type_fields.hidden
+    = text_field_tag(:type_name, nil, :id => 'type_name',:placeholder => 'введите название типа')
+    = f.submit "Добавить", :id => 'add_type'
 
   #article_fields.hidden
     %br
