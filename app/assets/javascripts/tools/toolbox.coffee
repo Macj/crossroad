@@ -73,12 +73,7 @@ window.get_select_value = (inst) ->
 # parse_radio = (elements) ->
 #   return element.value() for element in elements when element.instance.checked
 #   return null
-
-# window.get_select_value = (inst) ->
-#   if isIE8()
-#     inst.options[inst.selectedIndex].value
-#   else
-#     inst.value
+ы
 
 # window.trace = (thing) ->
 #   if window.console

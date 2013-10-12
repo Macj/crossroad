@@ -19,9 +19,26 @@ namespace "Main.FormBehavior", (exports) ->
     $(fields).hide()
 
   update_type_list = () ->
-    category_id = document.getElementById('element_category_id')
-    section = document.getElementById('element_section')
-    
+    category_id = get_select_value(document.getElementById('element_category_id'))
+    section = get_select_value(document.getElementById('element_section'))
+    XHR.post("http://#{window.location.host}/api/type_list", {category_id: category_id, section: section }, callback)
+
+  callback = (data) ->
+    $(document.getElementById('type_fields')).show()
+    type_field = document.getElementById('element_type_id')
+    type_field.innerHTML = ''
+    if !data.error
+      for element in data
+        elem = create_option(element.name)
+        $(elem).attr('value', element.id)
+        console.log(elem)
+        type_field.appendChild(elem)
+
+
+  create_option = (data) =>
+    elem = document.createElement('option')
+    elem.innerHTML = data
+    elem
 
   exports.initialize = () ->
     field = document.getElementById('element_section')

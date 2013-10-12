@@ -12,13 +12,13 @@
   %br
   = f.label "section", 'Раздел'
   = f.select "section", [["",""]] + @sections.map{|key, val| [val, key]}
+  %br
+  = f.label :name, 'Название'
+  = f.text_field :name
   #type_fields.hidden
     %br
     = f.label :type_id, 'Тип'
     = f.select :type_id, ["",""]
-    %br
-    = f.label :name, 'Название'
-    = f.text_field :name
 
   #article_fields.hidden
     %br
