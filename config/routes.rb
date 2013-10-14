@@ -47,6 +47,7 @@ Crossroad::Application.routes.draw do
 
   namespace :api do
     match '/type_list', :action => "type_list", :via => [:get, :post, :options], :format => "json"
+    match '/new_type', :action => "new_type", :via => [:get, :post, :options], :format => "json"
     #match '/check_manager_authorization', :action => "check_manager_authorization", :via => [:get, :post, :options], :format => "json"
   end
 

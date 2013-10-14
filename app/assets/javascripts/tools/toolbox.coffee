@@ -74,12 +74,6 @@ window.get_select_value = (inst) ->
 #   return element.value() for element in elements when element.instance.checked
 #   return null
 
-# window.get_select_value = (inst) ->
-#   if isIE8()
-#     inst.options[inst.selectedIndex].value
-#   else
-#     inst.value
-
 # window.trace = (thing) ->
 #   if window.console
 #     console.log thing
