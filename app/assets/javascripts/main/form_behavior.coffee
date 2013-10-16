@@ -13,6 +13,7 @@ namespace "Main.FormBehavior", (exports) ->
     hide_all_blocks()
     field = document.getElementById(type + '_fields')
     $(field).show()
+    
 
   hide_all_blocks = () ->
     fields = document.getElementsByClassName('hidden')
@@ -49,9 +50,10 @@ namespace "Main.FormBehavior", (exports) ->
     block = document.getElementById('new_type_fields')
     #todo toggle()
     if $(field).hasClass('unactive')
-      $(block).hide()
+      $(block).animate({height: 'hide'}, 200);
     else
-      $(block).show()
+      $(block).animate({height: 'show'}, 400);
+      #$(block).show()
     $(field).toggleClass('unactive')
 
   send_new_type_request = (e) ->
@@ -72,7 +74,9 @@ namespace "Main.FormBehavior", (exports) ->
       $(elem).attr('selected', 'selected')
       type_field.appendChild(elem)
       block = document.getElementById('new_type_fields')
-      $(block).hide()
+
+      $(block).animate({height: 'hide'}, 200);
+      
       field = document.getElementById('type_plus_btn')
       $(field).removeClass('unactive')
 

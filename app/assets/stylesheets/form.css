@@ -1,20 +1,37 @@
 form {
 text-align: center;
+border: 1px solid gray;
+width: 500px;
+margin:0 auto;
 }
 
 select {
 color: #4B0082;
+display: inline-block;
+margin: 10px 10px 10px;
+width: 30%;
 }
 
 textarea{
-
+  color: #4B0082;
+display: inline-block;
+margin: 10px 10px 10px;
+width: 30%;
+height: 48px;
+display: inline-block;
+vertical-align: middle;
 }
 input {
 color: #4B0082;
+display: inline-block;
+margin: 10px 10px 10px;
+width: 30%;
 }
 
 label {
-padding-right: 10px; /* Поле справа */
+display: inline-block;
+margin: 10px 10px 10px;
+width: 30%;
 }
 
 input[type="submit"]{
@@ -35,11 +52,67 @@ input:required {
     border: 1px solid red; /* Красная рамка для обязательных полей */
    }
 
-.plus{
+/*.plus{
 	width: 20px;
 	height: 20px;
-}
+}*/
 
 .element_place[description] {
 
 }
+
+.plus{
+  //border: 1px solid #808080;
+  display: inline-block;
+  height: 25px;
+  margin-bottom: -9px;
+  width: 25px;
+}
+
+.active_block{
+  background-color: #E8E8E8;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.field_with_button{
+  margin: 10px 0px 10px 25px 
+}
+
+/* TEXTAREA BLOCK */
+.textarea_block{
+  width: 100%;
+  height: 50px;
+  margin-bottom: -5px;
+  //border: 1px solid gray;
+
+}
+
+.textarea_block label{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+.textarea_block textarea{
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  margin: 0;
+  width: 31%;
+}
+/* END  TEXTAREA BLOCK */
+
+/* HIDDEN BLOCK
+.hidden{
+  display: none;
+  height: 40px
+ }
+
+ .hidden label{
+  margin: 0;
+}
+
+ .hidden input{
+  margin: 0;
+}
+*/

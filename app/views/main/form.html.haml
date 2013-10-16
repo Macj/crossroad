@@ -20,9 +20,9 @@
   #type_fields.hidden
     %br
     = f.label :type_id, 'Тип'
-    = f.select :type_id, ["",""]
+    = f.select :type_id, ["",""],{}, :class => 'field_with_button'
     %img.plus#type_plus_btn{:src => '/images/plus.png'}
-  #new_type_fields.hidden
+  #new_type_fields.hidden.active_block
     = text_field_tag(:type_name, nil, :id => 'type_name',:placeholder => 'введите название типа')
     = f.submit "Добавить", :id => 'add_type'
 
@@ -31,11 +31,13 @@
     = f.label 'article[autor]', 'Автор'
     = f.text_field 'article[autor]'
     %br
-    = f.label 'article[body]', 'Содержание'
-    = f.text_area 'article[body]'
+    .textarea_block
+      = f.label 'article[body]', 'Содержание'
+      = f.text_area 'article[body]'
     %br
-    = f.label 'article[sources]', 'Источники'
-    = f.text_area 'article[sources]'
+    .textarea_block
+      = f.label 'article[sources]', 'Источники'
+      = f.text_area 'article[sources]'
 
   #event_fields.hidden
     %br
@@ -45,27 +47,33 @@
     = f.label 'event[end_date]', 'дата конца'
     = f.text_field 'event[end_date]'
     %br
-    = f.label 'event[description]', 'Описание'
-    = f.text_area 'event[description]'
+    .field_block.textarea_block
+      = f.label 'event[description]', 'Описание'
+      = f.text_area 'event[description]'
     %br
-    = f.label 'event[web_links]', 'Источники'
-    = f.text_area 'event[web_links]'
+    .textarea_block
+      = f.label 'event[web_links]', 'Источники'
+      = f.text_area 'event[web_links]'
 
   #place_fields.hidden
     %br
-    = f.label 'place[description]', 'Описание'
-    = f.text_area 'place[description]'
+    .textarea_block
+      = f.label 'place[description]', 'Описание'
+      = f.text_area 'place[description]'
     %br
-    = f.label 'place[web_links]', 'Источники'
-    = f.text_area 'place[web_links]'
+    .textarea_block
+      = f.label 'place[web_links]', 'Источники'
+      = f.text_area 'place[web_links]'
 
   #project_fields.hidden
     %br
-    = f.label 'project[description]', 'Содержание'
-    = f.text_area 'project[description]'
+    .textarea_block
+      = f.label 'project[description]', 'Содержание'
+      = f.text_area 'project[description]'
     %br
-    = f.label 'project[web_links]', 'Источники'
-    = f.text_area 'project[web_links]'
+    .textarea_block
+      = f.label 'project[web_links]', 'Источники'
+      = f.text_area 'project[web_links]'
 
 
   %br
