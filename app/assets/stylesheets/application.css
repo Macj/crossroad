@@ -11,6 +11,11 @@
  *= require_self
  *= require_tree .
  */
+body {
+  background-image: url("/images/flover.jpg");
+  height: 100%;
+  width: 100%;
+}
 
  .hidden{
   display: none
@@ -46,6 +51,7 @@
 .sections{
   clear: left;
   border: 2px solid grey ;
+  border-radius: 10px;
   height: 200px;
   width: 200px;
   position: absolute;
@@ -56,6 +62,17 @@
 .category_block{
   margin-bottom: 10px
 }
+
+.category ul{
+  border: 2px solid grey ;
+  border-radius: 10px;
+}
+
+.category ul:hover{
+  background: #faf3d2; /* Цвет фона под ссылкой */
+  color: #800000; /* Новый цвет ссылки */
+  border: 1px solid #634f36 /* Рамка вокруг ссылки */ 
+  }
 
 .section_block{
   margin-bottom: 10px
@@ -83,23 +100,11 @@ bottom: 8%;
   color: grey;
 }
 
-.plus{
-  //border: 1px solid #808080;
-  display: inline-block;
-  height: 25px;
-  margin-bottom: -10px;
-  width: 25px;
-}
-
 /* Section menu view */
 .active{
   color: green;
 }
 
-
- .unactive{
-  //border: 1px solid red;
- }
 /****************/
 
 /* Content view */
