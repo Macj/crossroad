@@ -47,8 +47,12 @@ namespace "Main.FormBehavior", (exports) ->
     e.preventDefault()
     field = target_of_event e
     block = document.getElementById('new_type_fields')
-    $(block).show()
-    $(field).addClass('unactive')
+    #todo toggle()
+    if $(field).hasClass('unactive')
+      $(block).hide()
+    else
+      $(block).show()
+    $(field).toggleClass('unactive')
 
   send_new_type_request = (e) ->
     e.preventDefault()
