@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    gon.place = @place.get_map_info
   end
 
   def edit

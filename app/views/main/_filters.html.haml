@@ -2,10 +2,14 @@
   %span= 'Фильтры'
   #data_filter
     %span= 'По дате'
-    %label От
-    %input{:name => 'date_from', :size => 5}
-    %label До
-    %input{:name => 'date_from', :size => 5}
+    .date_block
+      %label От
+      %input{:name => 'begin_date', :id => 'begin_date'}
+      .date_btn
+    .date_block
+      %label До
+      %input{:name => 'end_date', :id => 'end_date'}
+      .date_btn
   #type_filter
     %span= 'По типу'
-    = select_tag "date_from", options_from_collection_for_select(types, "id", "name")
+    = select_tag "type_id", options_from_collection_for_select(types, "id", "name"), {include_blank: true}

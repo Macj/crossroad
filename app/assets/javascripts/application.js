@@ -11,12 +11,13 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 
-//= require jquery-1.9.1.min
+//= require frameworks/jquery-1.9.1.min
 //= require frameworks/bean
 //= require frameworks/ready
 //= require frameworks/reqwest
 
 //= require tools/namespace
+//= require tools/data
 //= require tools/toolbox
 //= require tools/xhr
 

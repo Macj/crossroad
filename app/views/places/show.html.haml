@@ -1,3 +1,5 @@
+= render :partial => '/main/map_includes'
+= javascript_include_tag "behavior/places/map_behavior"
 .main_block
   #place_name
     %span= @place.name
@@ -5,6 +7,8 @@
     %span= @place.category.name
     %br
     %span= @place.type.name
+  #place_map
+    #map_container
   #place_body
     %span= @place.description
   #place_source

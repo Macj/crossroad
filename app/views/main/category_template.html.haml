@@ -1,4 +1,9 @@
-= stylesheet_link_tag    "application", :media => "all"
+= stylesheet_link_tag "application", :media => "all"
+= stylesheet_link_tag "map", :media => "all"
+= "<script type='text/javascript' src='http://maps.googleapis.com/maps/api/js?key=#{Rails.application.config.maps_token}&sensor=false'></script>".html_safe
+= javascript_include_tag "tools/map"
+
+
 .main_block
   #category_name
     %span= 'Название категории'
@@ -29,6 +34,7 @@
       %img
       %img
     .content
+      #map_container
       %ul.items.table
       %ul.items.line
       %ul.items.thumb

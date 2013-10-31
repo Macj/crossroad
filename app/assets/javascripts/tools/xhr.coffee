@@ -11,10 +11,10 @@ namespace "XHR", (exports) ->
       throw "XHR.rails_mode has to be boolean value."
 
   exports.post = (url, params_map, callback) ->
-    if rails_mode
-      post_with_csrf url, params_map, callback
-    else
-      post url, params_map, callback
+    #if rails_mode
+    #  post_with_csrf url, params_map, callback
+    #else
+    post url, params_map, callback
 
   exports.post_and_expect_error = (url, params_map, success_callback, error_callback) ->
     reqwest
@@ -44,7 +44,7 @@ namespace "XHR", (exports) ->
   post = (url, params_map, callback) ->
     reqwest
       url: url,
-      type: 'json',
+      type: '[json,html]',
       method: 'post',
       headers: {
         "X-CSRF-Token": document.getElementsByName('csrf-token')[0].getAttribute('content')
