@@ -35,17 +35,14 @@ width: 30%;
 }
 
 input[type="submit"]{
-color: #fff; /* Цвет текста ссылки */
+color: DimGrey; /* Цвет текста ссылки */
  text-decoration: none; /* Убираем подчеркивание ссылки */
- text-shadow: 1px 1px 1px #000; /* добавляем тень для текста */
- background: #4169E0; /* Цвет фона кнопки по умолчанию */
- background: -webkit-gradient(linear, left top, left bottom, from(#ffc154), to(#ff8a2b)); /* Градиент кнопки */
- background: -moz-linear-gradient(top, #00FFFF, #4169E0); /* Градиент кнопки */
- background: gradient(linear, top, #00FFFF, #4169E0); /* Градиент кнопки */
- border: 1px solid #4169E04B0082; /* Обводка кнопки */
+ text-shadow: 1px 1px 1px LightSlateGray; /* добавляем тень для текста */
+ background-color: LightGray;
+ border: 1px solid LightGray; /* Обводка кнопки */
  border-radius: 20px; /* Радиус закругленых углов кнопки */
  padding: 10px 35px; /* Внутреннии отступы кнопки */
- margin-left: 4%;
+
 }
 
 input:required {
