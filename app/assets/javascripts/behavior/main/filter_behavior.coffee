@@ -1,10 +1,10 @@
-namespace "Category.FilterBehavior", (exports) ->
+namespace "Section.FilterBehavior", (exports) ->
   FIELDS = ['category_id', 'section_type', 'page']
   set_section = (e) ->
     e.preventDefault()
     field = target_of_event e
     id = field.getAttribute('id')
-    Crossroad.Data.set_filter('section_type', id, callback )
+    Crossroad.Data.set_filter('section_type', id)
 
 
   set_category = (e) ->
@@ -23,4 +23,4 @@ namespace "Category.FilterBehavior", (exports) ->
       bind_event field, 'click', set_category
     
 domReady ->
-  Category.FilterBehavior.initialize()
+  Section.FilterBehavior.initialize()
