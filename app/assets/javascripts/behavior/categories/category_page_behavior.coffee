@@ -8,9 +8,9 @@ namespace "Category.PageBehavior", (exports) ->
     id = field.getAttribute('id')
     $(field).addClass('active')
 
-    hide_all_content_blocks()     
-    block = document.getElementById(id + '_content')
-    $(block).show()
+    #hide_all_content_blocks()     
+    #block = document.getElementById(id + '_content')
+    #$(block).show()
 
   clear_all_actives = () ->
     fields = document.getElementsByClassName('section')

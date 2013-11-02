@@ -20,7 +20,7 @@ class MainController < ApplicationController
     @types = Type.where(:section_type => @section[0])
     @content = eval(@section[0].humanize).all
     @filters = {section_type: @section[0]}
-    gon.points = @content.map{|e| e.get_map_info}
+    gon.points = @content.map{|e| e.get_map_info if e.methods.include?(:get_map_info) }.compact
   end  
 
   def form
@@ -66,8 +66,8 @@ class MainController < ApplicationController
         @error = true
       end
       #creation of the some thing
-      puts @error
-      puts flash.inspect
+      # puts @error
+      # puts flash.inspect
       unless @error
         class_obj = eval(element[:section].humanize)
         @thing = class_obj.new(parameters)

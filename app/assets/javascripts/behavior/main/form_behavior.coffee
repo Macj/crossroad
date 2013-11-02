@@ -68,6 +68,7 @@ namespace "Main.FormBehavior", (exports) ->
 
   new_type_callback = (data) ->
     type_field = document.getElementById('element_type_id')
+    data = JSON.parse(data.response)
     if !data.error
       elem = create_option(data.name)
       $(elem).attr('value', data.id)

@@ -14,6 +14,15 @@ namespace "Main.SectionPageBehavior", (exports) ->
     id = field.getAttribute('id')
     hide_all_content_except(id)
 
+    clear_all_actives()
+    $(field).addClass('active')
+
+
+  clear_all_actives = () ->
+    fields = document.getElementsByClassName('category_item')
+    for field in fields
+      $(field).removeClass('active')
+
   hide_all_content_except = (id) ->
     fields = document.getElementsByClassName('item')
     for field in fields

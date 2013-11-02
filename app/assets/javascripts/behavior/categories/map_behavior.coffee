@@ -8,7 +8,6 @@ namespace "Category.MapBehavior", (exports) ->
     map = document.getElementById('map_block')
     $(map).removeClass('hidden')
     unless loaded
-      console.log(loaded)
       Crossroad.Map.initialize()
       if gon && gon.points
         set_markers(gon.points)
@@ -20,10 +19,6 @@ namespace "Category.MapBehavior", (exports) ->
 
 # update part
   update_map = () ->
-    category_id = Crossroad.Data.filters['category_id']
-    section_type = Crossroad.Data.filters['section_type']
-    console.log({category_id: category_id, section_type: section_type } )
-
     XHR.post("http://#{window.location.host}/api/points", 
       {filters: JSON.stringify(Crossroad.Data.filters)}, 
       callback
