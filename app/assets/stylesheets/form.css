@@ -20,6 +20,7 @@ width: 30%;
 height: 48px;
 display: inline-block;
 vertical-align: middle;
+overflow: auto;
 }
 input {
 color: #4B0082;

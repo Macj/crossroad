@@ -12,9 +12,8 @@
  *= require_tree .
  */
 body {
-  background-image: url("/images/flover.jpg");
-  height: 100%;
-  width: 100%;
+  //background-image: url("/images/flover.jpg");
+  
 }
 
  .hidden{
@@ -59,9 +58,24 @@ body {
   top: 50%;
 }
 
-.category_block{
+.sections ul li{
+  list-style: inside url(strelki.png);
+
+}
+ 
+.sections a:link {
+  color: #3333FF;
+ }
+
+ .sections a:hover {
+  color: #3300FF;
+  background-color: #FFFFCC;
+ }
+
+.category_block {
   margin-bottom: 10px
 }
+
 
 .category ul{
   border: 2px solid grey ;
