@@ -43,12 +43,11 @@ color: black; /* Цвет текста ссылки */
  border: 2px solid #e4e4e4; /* Обводка кнопки */
  border-radius: 20px; /* Радиус закругленых углов кнопки */
  padding: 10px 35px; /* Внутреннии отступы кнопки */
- opacity: 0.8;
 
 }
 
 
-input:active {
+input[type="submit"]:active {
 color: black; /* Цвет текста ссылки */
  text-decoration: none; /* Убираем подчеркивание ссылки */
  //text-shadow: 1px 1px 1px LightSlateGray; /* добавляем тень для текста */
@@ -57,7 +56,6 @@ color: black; /* Цвет текста ссылки */
  border-radius: 20px; /* Радиус закругленых углов кнопки */
  padding: 11px 34px 9px 36px; /* Внутреннии отступы кнопки */
  box-shadow: inset 0 0 2px; 
- opacity: 0.8;
 }
 input:required {
     border: 1px solid red; /* Красная рамка для обязательных полей */
