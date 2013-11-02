@@ -19,6 +19,9 @@ class CategoriesController < ApplicationController
       request = request.where(:section_type => @section_type)
     end
     @types = request
+
+    @filters = {category_id: @category.id, section_type: @section_type}
+    gon.points = @place_content.map{|e| e.get_map_info}
     #Think about it
     #@people_content = Person.where(:category_id => params[:id])
   end

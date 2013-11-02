@@ -1,6 +1,12 @@
-= javascript_include_tag "categories/category_page_behavior"
+= javascript_include_tag "behavior/categories/category_page_behavior"
+= javascript_include_tag "behavior/categories/filter_behavior"
+= javascript_include_tag "behavior/_filters"
+= render :partial => '/main/map_includes'
+= javascript_include_tag "behavior/categories/map_behavior"
+
+#filters.hidden{:data => "#{@filters.map{|e| e.to_json}}"}
 .main_block
-  #category_name
+  #category_name{:data => @category.id}
     %span= @category.name
   .main_left
     .section_block
@@ -15,25 +21,20 @@
   .main_right
     .view
       %span= "Вид"
-      %img
-      %img
-      %img
+      %img.icon{:src => '/4.jpg'}
+      %img.icon{:src => '/4.jpg'}
+      %img.icon{:src => '/4.jpg'}
+      %img.icon#map_show_btn{:src => '/6.png'}
     .content
-      #article_content.content_block
+      #map_block.hidden
+        #map_close_btn
+        #map_container
+      .content_block
         %ul.items.table
         %ul.items.line
         = render :partial => '/articles/content', :locals => {:content => @article_content}
-      #event_content.content_block{:style => "display:none"}
-        %ul.items.table
-        %ul.items.line
         = render :partial => '/events/content', :locals => {:content => @event_content}
-      #place_content.content_block{:style => "display:none"}
-        %ul.items.table
-        %ul.items.line
         = render :partial => '/places/content', :locals => {:content => @place_content}
-      #project_content.content_block{:style => "display:none"}
-        %ul.items.table
-        %ul.items.line
         = render :partial => '/projects/content', :locals => {:content => @project_content}
       / .person_content
       /   %ul.items.table

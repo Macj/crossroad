@@ -1,4 +1,9 @@
-= javascript_include_tag "main/section_page_behavior"
+= javascript_include_tag "behavior/main/section_page_behavior"
+= javascript_include_tag "behavior/main/filter_behavior"
+= javascript_include_tag "behavior/_filters"
+= render :partial => '/main/map_includes'
+= javascript_include_tag "behavior/categories/map_behavior"
+#filters.hidden{:data => "#{@filters.map{|e| e.to_json}}"}
 .main_block
   #section_name
     %img.icon#sections_selector{:src => '/4.jpg', :width=>"35", :height=>"35"}
@@ -10,20 +15,24 @@
       - @categories.each do |category|
         .category
           %span.menu_item{:children => category.name + "children"}
-            = link_to category.name, category_path(category), :class => 'category_item', :id => "category_#{category.id}"
+            = link_to category.name, category_path(category), :class => 'category_item', :id => "category_#{category.id}", :data => category.id
           %ul{:id => category.name + "children"}
             - category.children.each do |child|
-              %li= link_to child.name, category_path(child), :class => 'category_item', :id => "category_#{child.id}" 
+              %li= link_to child.name, category_path(child), :class => 'category_item', :id => "category_#{child.id}" , :data => child.id
 
     = render :partial => 'filters', :locals => {:types => @types}
   .main_right
     .view
       %span= "Вид"
-      %img
-      %img
-      %img
+      %img.icon{:src => '/4.jpg'}
+      %img.icon{:src => '/4.jpg'}
+      %img.icon{:src => '/4.jpg'}
+      %img.icon#map_show_btn{:src => '/6.png'}
     .content
-      #article_content.content_block
+      #map_block.hidden
+        #map_close_btn
+        #map_container
+      .content_block{:id => "#{@section[0]}_content"}
         %ul.items.table
         %ul.items.line
         = render :partial => "/#{@section[0].pluralize}/content", :locals => {:content => @content}

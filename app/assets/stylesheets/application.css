@@ -8,12 +8,17 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
  */
 body {
+<<<<<<< HEAD
   //background-image: url("/images/flover.jpg");
   
+=======
+  background-image: url("/layout/l2.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+>>>>>>> 31fa2b76c7f9fbbfd4da260ac3b80ed29bae5cec
 }
 
  .hidden{
@@ -47,7 +52,7 @@ body {
   width: 69%;
 }
 
-.sections{
+.sections, .section_block{
   clear: left;
   border: 2px solid grey ;
   border-radius: 10px;
@@ -58,6 +63,7 @@ body {
   top: 50%;
 }
 
+<<<<<<< HEAD
 .sections ul li{
   list-style: inside url(strelki.png);
 
@@ -73,6 +79,11 @@ body {
  }
 
 .category_block {
+=======
+
+
+.category_block{
+>>>>>>> 31fa2b76c7f9fbbfd4da260ac3b80ed29bae5cec
   margin-bottom: 10px
 }
 
@@ -147,6 +158,12 @@ bottom: 8%;
   margin: 0 10px 10px 0;
 }
 
+.thumb .item_info{
+  float: left;
+  /* width: 300px;*/
+  margin: 0 5px 0 5px;
+}
+
 .thumb .item_info>p{
   height: 40px;
   /* width: 300px;*/
@@ -172,3 +189,11 @@ bottom: 8%;
 
 
 /**********************/
+
+/********** Beauty ******/
+
+.icon{
+  height:40px;
+  width:40px;
+}
+

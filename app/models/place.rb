@@ -6,8 +6,15 @@ class Place < ActiveRecord::Base
   include DateStructure
   include FileAttacheStructure
   
-  attr_accessible :category_id, :description, :galery_id, :name, :place_id, :type_id, :web_links
+  attr_accessible :category_id, :description, :galery_id, :name, :address_id, :type_id, :web_links
 
   belongs_to :type
   belongs_to :category
+  belongs_to :address
+
+  def get_map_info
+    item = self.address.get_info
+    item['title'] = self.name
+    item
+  end
 end

@@ -4,7 +4,7 @@ namespace "Main.SectionPageBehavior", (exports) ->
     e.preventDefault()
     field = target_of_event e
     
-    block = document.getElementsByClassName('sections')[0]
+    block = document.getElementsByClassName('section_block')[0]
     $(block).toggle()
 
   behavior_on_category_click = (e) ->
@@ -23,7 +23,7 @@ namespace "Main.SectionPageBehavior", (exports) ->
         _field.show()
 
   exports.initialize = () ->
-    block = document.getElementsByClassName('sections')[0]
+    block = document.getElementsByClassName('section_block')[0]
     $(block).hide()
     field = document.getElementById('sections_selector')
     bind_event field, 'click', behavior_on_sections_selector_click

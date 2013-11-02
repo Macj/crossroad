@@ -74,11 +74,11 @@ window.get_select_value = (inst) ->
 #   return element.value() for element in elements when element.instance.checked
 #   return null
 
-# window.trace = (thing) ->
-#   if window.console
-#     console.log thing
-#   else
-#     false
+window.trace = (thing) ->
+  if window.console
+    console.log thing
+  else
+    false
 
 # window.scroll_to = (position) ->
 #   document.body.scrollTop = position

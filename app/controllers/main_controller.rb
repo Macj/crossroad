@@ -17,7 +17,10 @@ class MainController < ApplicationController
   def section
     @section = SECTIONS.select{|k,v| k == params[:section]}.first
     @categories = Category.main
+    @types = Type.where(:section_type => @section[0])
     @content = eval(@section[0].humanize).all
+    @filters = {section_type: @section[0]}
+    gon.points = @content.map{|e| e.get_map_info}
   end  
 
   def form

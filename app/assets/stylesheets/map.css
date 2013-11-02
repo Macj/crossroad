@@ -1,0 +1,11 @@
+#map_container{
+  height:300px;
+  width:600px;
+}
+
+#map_close_btn{
+  height:30px;
+  width:30px;
+  background-image: url('/close.png');
+  background-size: cover;
+}
