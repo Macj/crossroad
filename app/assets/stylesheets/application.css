@@ -58,11 +58,30 @@ body {
   top: 50%;
 }
 
+<<<<<<< HEAD
+.sections ul li{
+  list-style: inside url(strelki.png);
+
+}
+ 
+.sections a:link {
+  color: #3333FF;
+ }
+
+ .sections a:hover {
+  color: #3300FF;
+  background-color: #FFFFCC;
+ }
+
+.category_block {
+=======
 
 
 .category_block{
+>>>>>>> 31fa2b76c7f9fbbfd4da260ac3b80ed29bae5cec
   margin-bottom: 10px
 }
+
 
 .category ul{
   border: 2px solid grey ;
