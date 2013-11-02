@@ -58,7 +58,7 @@ body {
   top: 50%;
 }
 
-.sections ul li{
+.section_block ul li{
   list-style: inside url(strelki.png);
 
 }

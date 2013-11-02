@@ -6,14 +6,14 @@ margin:0 auto;
 }
 
 select {
-color: #4B0082;
+//color: #4B0082;
 display: inline-block;
 margin: 10px 10px 10px;
 width: 30%;
 }
 
 textarea{
-  color: #4B0082;
+//color: #4B0082;
 display: inline-block;
 margin: 10px 10px 10px;
 width: 30%;
@@ -23,7 +23,7 @@ vertical-align: middle;
 overflow: auto;
 }
 input {
-color: #4B0082;
+//color: #4B0082;
 display: inline-block;
 margin: 10px 10px 10px;
 width: 30%;
@@ -36,16 +36,27 @@ width: 30%;
 }
 
 input[type="submit"]{
-color: DimGrey; /* Цвет текста ссылки */
+color: black; /* Цвет текста ссылки */
  text-decoration: none; /* Убираем подчеркивание ссылки */
- text-shadow: 1px 1px 1px LightSlateGray; /* добавляем тень для текста */
- background-color: LightGray;
- border: 1px solid LightGray; /* Обводка кнопки */
+ //text-shadow: 1px 1px 1px LightSlateGray; /* добавляем тень для текста */
+ background-color: #ececec;
+ border: 1px solid black; /* Обводка кнопки */
  border-radius: 20px; /* Радиус закругленых углов кнопки */
  padding: 10px 35px; /* Внутреннии отступы кнопки */
 
 }
 
+
+input:active {
+color: black; /* Цвет текста ссылки */
+ text-decoration: none; /* Убираем подчеркивание ссылки */
+ //text-shadow: 1px 1px 1px LightSlateGray; /* добавляем тень для текста */
+ background-color: #ececec;
+ border: 1px solid black; /* Обводка кнопки */
+ border-radius: 20px; /* Радиус закругленых углов кнопки */
+ padding: 11px 34px 9px 36px; /* Внутреннии отступы кнопки */
+ box-shadow: inset 0 0 2px; 
+}
 input:required {
     border: 1px solid red; /* Красная рамка для обязательных полей */
    }
