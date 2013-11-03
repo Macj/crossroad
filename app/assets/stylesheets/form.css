@@ -47,7 +47,7 @@ color: black; /* Цвет текста ссылки */
 }
 
 
-input:active {
+input[type="submit"]:active {
 color: black; /* Цвет текста ссылки */
  text-decoration: none; /* Убираем подчеркивание ссылки */
  //text-shadow: 1px 1px 1px LightSlateGray; /* добавляем тень для текста */
