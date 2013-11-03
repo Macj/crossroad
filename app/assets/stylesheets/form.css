@@ -23,7 +23,7 @@ vertical-align: middle;
 overflow: auto;
 }
 input {
-//color: #4B0082;
+color: #c9c9c9;
 display: inline-block;
 margin: 10px 10px 10px;
 width: 30%;
@@ -39,10 +39,11 @@ input[type="submit"]{
 color: black; /* Цвет текста ссылки */
  text-decoration: none; /* Убираем подчеркивание ссылки */
  //text-shadow: 1px 1px 1px LightSlateGray; /* добавляем тень для текста */
- background-color: #ececec;
- border: 1px solid black; /* Обводка кнопки */
+ background-color: #ffffff;
+ border: 2px solid #e4e4e4; /* Обводка кнопки */
  border-radius: 20px; /* Радиус закругленых углов кнопки */
  padding: 10px 35px; /* Внутреннии отступы кнопки */
+ opacity: 0.8;
 
 }
 
@@ -51,11 +52,12 @@ input[type="submit"]:active {
 color: black; /* Цвет текста ссылки */
  text-decoration: none; /* Убираем подчеркивание ссылки */
  //text-shadow: 1px 1px 1px LightSlateGray; /* добавляем тень для текста */
- background-color: #ececec;
- border: 1px solid black; /* Обводка кнопки */
+ background-color: #ffffff;
+ border: 2px solid #e4e4e4; /* Обводка кнопки */
  border-radius: 20px; /* Радиус закругленых углов кнопки */
  padding: 11px 34px 9px 36px; /* Внутреннии отступы кнопки */
  box-shadow: inset 0 0 2px; 
+ opacity: 0.8;
 }
 input:required {
     border: 1px solid red; /* Красная рамка для обязательных полей */
