@@ -2,16 +2,16 @@
 = stylesheet_link_tag    "form", :media => "all"
 = flash[:errors]
 
-- if @thing and @thing.errors
-  .error_block
-    - @thing.errors.each do |error|
-      .error= error.to_s
-
-
 = form_for :element,  :as => :article, :url => main_form_path do |f|
-  
+  - if flash[:error] 
+    .error
+      = flash[:error]
+
   = f.label :category_id, 'Категория'
   = f.select :category_id, Category.all.map{|e| [e.name, e.id]}
+  - if @thing and @thing.errors and @thing.errors[:category_id]
+    .error_message= @thing.errors[:category_id].join(', ')
+  
   %br
   
   = f.label "section", 'Раздел'
@@ -20,16 +20,19 @@
   
     = f.label :name, 'Название'
     = f.text_field :name
-    //#type_fields.hidden
+    - if @thing and @thing.errors and @thing.errors[:name]
+      .error_message= @thing.errors[:name].join(', ')
   %br
   
     = f.label :type_id, 'Тип'
     = f.select :type_id, ["",""]
+
     %img.plus#type_plus_btn{:src => '/images/plus.png'}
   #new_type_fields.hidden
     = text_field_tag(:type_name, nil, :id => 'type_name',:placeholder => 'введите название типа')
     = f.submit "Добавить", :id => 'add_type'
-
+  - if @thing and @thing.errors and @thing.errors[:type_id]
+    .error_message= @thing.errors[:type_id].join(', ')
   #article_fields.hidden
     %br
     = f.label 'article[autor]', 'Автор'
@@ -71,6 +74,8 @@
     = f.label 'project[web_links]', 'Источники'
     = f.text_area 'project[web_links]'
 
+  -# if @thing and @thing.errors and @thing.errors[:address_id]
+    .error_message= @thing.errors[:address_id].join(', ')
 
   %br
   = f.label :picture, 'Фото'

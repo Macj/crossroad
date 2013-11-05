@@ -6,7 +6,9 @@ namespace "Category.MapBehavior", (exports) ->
 
   show_map = (e) ->
     map = document.getElementById('map_block')
-    $(map).removeClass('hidden')
+    if map 
+      $(map).removeClass('hidden')
+
     unless loaded
       Crossroad.Map.initialize()
       if gon && gon.points
@@ -15,7 +17,8 @@ namespace "Category.MapBehavior", (exports) ->
 
   hide_map = () ->
     map = document.getElementById('map_block')
-    $(map).addClass('hidden')
+    if map
+      $(map).addClass('hidden')
 
 # update part
   update_map = () ->
@@ -33,9 +36,12 @@ namespace "Category.MapBehavior", (exports) ->
   exports.update_map = update_map
   exports.initialize = () ->
     btn = document.getElementById('map_show_btn')
-    bind_event btn, 'click', show_map 
+    if btn
+      bind_event btn, 'click', show_map 
+
     btn = document.getElementById('map_close_btn')
-    bind_event btn, 'click', hide_map 
+    if btn
+      bind_event btn, 'click', hide_map 
 
 
 domReady ->

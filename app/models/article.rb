@@ -11,4 +11,10 @@ class Article < ActiveRecord::Base
   belongs_to :type
   belongs_to :category
 
+  def get_map_info
+    if self.place
+      item = self.place.get_map_info
+      item
+    end
+  end
 end

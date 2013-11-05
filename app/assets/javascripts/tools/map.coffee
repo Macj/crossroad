@@ -1,10 +1,11 @@
 namespace "Crossroad.Map", (exports) ->
   exports.map = {}
   exports.markers = []
-  
+
   lat_lng = (x,y)->
     new google.maps.LatLng(x, y);
 
+## markers
   add_marker = ( x, y, title, content) ->
     myLatlng = lat_lng(x,y)
     marker = new google.maps.Marker({
@@ -13,6 +14,7 @@ namespace "Crossroad.Map", (exports) ->
       title: title
     })
     Crossroad.Map.markers.push( marker )
+
     if content
       add_info_to_marker(content, marker)
 
@@ -33,6 +35,7 @@ namespace "Crossroad.Map", (exports) ->
   exports.add_marker = add_marker
   exports.add_info_to_marker = add_info_to_marker
 
+## initialize
   exports.initialize = () ->
     container = document.getElementById('map_container')
     myLatlng = lat_lng(48.46809, 35.053403);
@@ -41,7 +44,8 @@ namespace "Crossroad.Map", (exports) ->
         center: myLatlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     }
-    Crossroad.Map.map = new google.maps.Map(container, myOptions); 
+    if container
+      Crossroad.Map.map = new google.maps.Map(container, myOptions); 
 
 #domReady ->
 #  Crossroad.Map.initialize()

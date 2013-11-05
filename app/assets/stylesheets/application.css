@@ -10,7 +10,7 @@
  *
  */
 body {
-//  background-image: url("/layout/l004.jpg");
+  background-image: url("/layout/l004.jpg");
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -143,8 +143,15 @@ bottom: 8%;
 .thumb .item{
   float: left;
   height: 70px;
-  width: 300px;
+  width: 200px;
   margin: 0 10px 10px 0;
+  list-style: none;
+
+  background-color: #ffffff;
+ border: 2px solid #e4e4e4; /* Обводка кнопки */
+ border-radius: 35px; /* Радиус закругленых углов кнопки */
+ padding: 11px 34px 9px 36px; /* Внутреннии отступы кнопки */
+ box-shadow: inset 0 0 2px; 
 }
 
 .thumb .item_info{

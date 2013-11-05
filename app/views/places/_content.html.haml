@@ -7,7 +7,8 @@
         %p 
           %span= item.category.name
           %br
-          %span= item.type.name
+          - if item.type
+            %span= item.type.name
           %br
       .description
         = item.description if item.description

@@ -24,6 +24,7 @@ class MainController < ApplicationController
   end  
 
   def form
+    puts params.inspect 
     if params[:element]
       @error = false
       element = params[:element]
@@ -74,8 +75,10 @@ class MainController < ApplicationController
         if @thing.save
           redirect_to @thing
         else
-          flash[:error] = 'Допущена ошибка. повторите попытку'
+          flash[:error] = 'Допущена ошибка. повторите попытку1'
         end
+      else
+        flash[:error] = 'Допущена ошибка. повторите попытку2'
       end
     end
   end

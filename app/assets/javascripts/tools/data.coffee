@@ -10,6 +10,7 @@ namespace "Crossroad.Data", (exports) ->
     )
 
   callback = (data) => 
+    Category.MapBehavior.update_map()
     block = document.getElementsByClassName( 'content_block' )[0]
     block.innerHTML = ''
     block.setAttribute('id', Crossroad.Data.filters['section_type'] + '_content')

@@ -12,6 +12,12 @@ class Place < ActiveRecord::Base
   belongs_to :category
   belongs_to :address
 
+  validates :description, :presence => true #,
+  validates :name, :presence => true #,
+  validates :address_id, :presence => true #,
+  validates :type_id, :presence => true #,
+  validates :category_id, :presence => true #,
+
   def get_map_info
     item = self.address.get_info
     item['title'] = self.name
