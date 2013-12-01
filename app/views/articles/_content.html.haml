@@ -1,14 +1,23 @@
+-#         %ul.items.table
+-#         %ul.items.line
 %ul.items.thumb
   - content.each do |item|
     %li.item{:category => "category_#{item.category_id}"}
-      =link_to '<img class="icon" src="/1.jpeg" width="65" height="65" />'.html_safe, article_path(item)
+      = link_to "<img class='icon' src='#{ item.picture.url(:thumb) || '/2.jpeg'}' width='65' height='65' />".html_safe,  article_path(item)
       .item_info 
         %span.item_name=  link_to item.name, article_path(item)
         %p 
           = item.category.name
           %br
-          = item.type.name
+          = item.type.name if item.type
           %br
           = item.date
+
+        .author
+          - info = item.author_info
+          - if info[:id]
+            = link_to info[:info], person_path(info[:id])
+          -else
+            = info[:info]
       .body
         = item.body if item.body

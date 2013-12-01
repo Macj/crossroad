@@ -23,4 +23,13 @@ class Place < ActiveRecord::Base
     item['title'] = self.name
     item
   end
+
+  def self.get_info_for_all ids
+    elems = self.includes(:address).where(:id => ids)
+    result = []
+    elems.each do |elem|
+      result << elem.get_map_info
+    end
+    result
+  end
 end

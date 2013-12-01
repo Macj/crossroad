@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131030112240) do
+ActiveRecord::Schema.define(:version => 20131130092612) do
 
   create_table "addresses", :force => true do |t|
     t.string   "city"
@@ -26,17 +26,38 @@ ActiveRecord::Schema.define(:version => 20131030112240) do
   create_table "articles", :force => true do |t|
     t.string   "name"
     t.integer  "category_id"
-    t.integer  "autor_id"
+    t.integer  "author_id"
     t.text     "body"
     t.text     "sources"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
-    t.string   "autor"
+    t.string   "author"
     t.integer  "type_id"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.date     "posted_at"
+  end
+
+  create_table "articles_events", :force => true do |t|
+    t.integer "article_id"
+    t.integer "event_id"
+  end
+
+  create_table "articles_people", :force => true do |t|
+    t.integer "article_id"
+    t.integer "person_id"
+  end
+
+  create_table "articles_places", :force => true do |t|
+    t.integer "article_id"
+    t.integer "place_id"
+  end
+
+  create_table "articles_projects", :force => true do |t|
+    t.integer "article_id"
+    t.integer "project_id"
   end
 
   create_table "categories", :force => true do |t|

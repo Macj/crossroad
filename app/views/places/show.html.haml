@@ -1,6 +1,8 @@
 = render :partial => '/main/map_includes'
 = javascript_include_tag "behavior/places/map_behavior"
 .main_block
+  #picture
+    = link_to image_tag(@place.picture.url(:medium)), place_path(@place)
   #place_name
     %span= @place.name
   #place_info

@@ -6,15 +6,19 @@ class Article < ActiveRecord::Base
   include DateStructure
   include FileAttacheStructure
 
-  attr_accessible :autor_id, :body, :category_id, :name, :sources, :autor, :type_id
+  attr_accessible :author_id, :body, :category_id, :name, :sources, :author, :type_id, :posted_at
 
   belongs_to :type
   belongs_to :category
+  belongs_to :person, :foreign_key => :author_id
 
-  def get_map_info
-    if self.place
-      item = self.place.get_map_info
-      item
+  scope :published, -> { where("posted_at <= ?", Date.today)}
+
+  def author_info
+    if self.author_id
+      {:id => self.author_id, :info => self.person.fio}
+    else
+      {:info => self.author}
     end
   end
 end

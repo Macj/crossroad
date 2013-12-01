@@ -21,6 +21,7 @@ module Crossroad
     config.autoload_paths += %W(#{config.root}/lib/file_attache_structure)
     config.autoload_paths += %W(#{config.root}/lib/active_record_extentions)
     config.autoload_paths += %W(#{config.root}/lib/google_geocoder)
+    config.autoload_paths += %W(#{config.root}/lib/data.rb)
 
     require 'active_record_extentions'
 

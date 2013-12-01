@@ -11,5 +11,6 @@
       %input{:name => 'end_date', :id => 'end_date'}
       .date_btn
   #type_filter
-    %span= 'По типу'
-    = select_tag "type_id", options_from_collection_for_select(types, "id", "name"), {include_blank: true}
+    - if types
+      %span= 'По типу'
+      = select_tag "type_id", options_from_collection_for_select(types, "id", "name"), {include_blank: true}

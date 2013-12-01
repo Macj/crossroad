@@ -1,28 +1,11 @@
 class ApiController < ApplicationController
   protect_from_forgery
   before_filter :parse_params
-
+  before_filter :set_section, :only => :points
+  
+  # TODO USE CONTENT MODEL
   def content
-    content_class = nil
-    @content = nil
-    if @filters['section_type']
-      content_class = eval(@filters['section_type'].humanize)
-    end
-    if content_class
-      @content = content_class.where('id IS NOT NULL')
-      if @filters['category_id']
-        @content = @content.where(:category_id => @filters['category_id'])
-      end
-      if @filters['type_id'] && @filters['type_id'] != ""
-        @content = @content.where(:type_id => @filters['type_id'])
-      end
-      if @filters['date_from'] and content_class.has_column?('date_from')
-        @content = @content.where(:date_from => @filters['date_from'])
-      end
-      if @filters['date_to'] and content_class.has_column?('date_to')
-        @content = @content.where(:date_to => @filters['date_to'])
-      end
-    end
+    @content = Data.get_content(@filters)
     render "/#{@filters['section_type'].pluralize}/_content", :formats=>[:html], :handlers=>[:haml], :layout => nil, :status => 200, :locals => {:content => @content}
   end
 
@@ -54,16 +37,13 @@ class ApiController < ApplicationController
     end
   end
 
-# map behavior
+  # map behavior 
+  # TODO USE CONTENT MODEL
   def points
-    places = Place.where(:category_id => @filters['category_id'])
-    info = []
-    places.each do |elem|
-      item = elem.get_map_info
-      info << item
-    end
+    @content = Data.get_content(@filters)
+    info = set_gon_points(@content_class)
     respond_to do |format|
-      format.html # index.html.erb
+      format.html 
       format.json { render json: info }
     end
   end
@@ -71,5 +51,10 @@ class ApiController < ApplicationController
   private
     def parse_params
       @filters = ActiveSupport::JSON.decode(params['filters']) if params['filters']
+    end
+
+    def set_section
+      @section = SECTIONS.select{|k,v| k == @filters['section_type']}.first
+      @content_class = eval(@section[0].humanize)
     end
 end

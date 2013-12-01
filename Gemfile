@@ -15,13 +15,19 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.5'
   gem 'coffee-rails', '~> 3.2.2'
   #gem 'uglifier', '>= 1.2.4'
-  gem 'therubyracer', '0.10.2'
+  #gem 'therubyracer', '0.10.2'
 end
 
 gem 'jquery-rails'
 gem "paperclip", "~> 3.0"
 gem 'gon'
 
+group :test do
+  gem "rspec-rails", ">= 2.0.1"
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

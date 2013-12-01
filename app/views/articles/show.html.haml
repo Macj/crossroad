@@ -7,11 +7,17 @@
     %span= @article.category.name
     %br
     %span= @article.type.name if @article.type
-    %br
-    %span= @article.autor
+  %br
   #article_body
     %span= @article.body
+  %br
+  .autor
+    - info = @article.author_info
+    - if info[:id]
+      = link_to info[:info], person_path(info[:id])
+    -else
+      = info[:info]
   #article_source
     %span= @article.sources
     %br
-    %span= @article.created_at.strftime(" %H:%M %d.%m.%Y")
+    %span= @article.posted_at.strftime("%d.%m.%Y")

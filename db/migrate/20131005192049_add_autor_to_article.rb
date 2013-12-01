@@ -1,5 +1,5 @@
 class AddAutorToArticle < ActiveRecord::Migration
   def change
-    add_column :articles, :autor, :string
+    add_column :articles, :author, :string
   end
 end

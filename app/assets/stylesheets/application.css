@@ -10,7 +10,7 @@
  *
  */
 body {
-  background-image: url("/layout/l004.jpg");
+  //background-image: url("/layout/l004.jpg");
   background-size: cover;
   height: 100%;
   width: 100%;
@@ -27,6 +27,14 @@ body {
   
   top: 50%;
   left: 50%;
+}
+
+.main_page_block>.section_block{
+  border: 2px solid green;
+  top: 45%;
+  left: 45%; 
+  position: absolute;
+  height: 500px;
 }
 
 .main_block{
@@ -157,13 +165,19 @@ bottom: 8%;
 .thumb .item_info{
   float: left;
   /* width: 300px;*/
-  margin: 0 5px 0 5px;
+  margin: -5px 5px 0 5px;
 }
 
 .thumb .item_info>p{
   height: 40px;
   /* width: 300px;*/
   margin: 0 0 0 0;
+}
+
+.thumb .item_info .author{
+  margin-top: 10px;
+  color: #3bc6dc;
+  /* #4fced7; #3bc6dc*/
 }
 
 .thumb .description, .thumb .body {

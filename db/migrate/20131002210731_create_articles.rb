@@ -3,7 +3,7 @@ class CreateArticles < ActiveRecord::Migration
     create_table :articles do |t|
       t.string :name
       t.integer :category_id
-      t.integer :autor_id
+      t.integer :author_id
       t.text :body
       t.text :sources
 

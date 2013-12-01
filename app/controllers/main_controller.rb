@@ -1,27 +1,43 @@
 #encoding: utf-8
 class MainController < ApplicationController
   #protect_from_forgery
-  SECTIONS = {
-    'article' => 'Статьи',
-    'event'   => 'События',
-    'place'   => 'Места',
-    'project' => 'Проекты',
-    'person'  => 'Лица',
-  }
   before_filter :sections_init
-
   def index
+  end
+
+  def search
     @categories = Category.main
   end
 
+  def map
+    @filters = {}
+    if @section
+      @types = Type.where(:section_type => @section[0])
+      @filters = {section_type: @section[0]}
+      #todo limit
+      @content = eval(@section[0].humanize).all
+      #set_gon_points
+      puts 'points', set_gon_points().inspect
+    else
+      place_ids = Place.all.map(&:id) + Event.all.map(&:place_id)
+      gon.points = Place.get_info_for_all place_ids
+      #set_gon_points
+      puts 'points', gon.points
+    end
+    @categories = Category.main
+
+  end
+
   def section
-    @section = SECTIONS.select{|k,v| k == params[:section]}.first
     @categories = Category.main
     @types = Type.where(:section_type => @section[0])
-    @content = eval(@section[0].humanize).all
     @filters = {section_type: @section[0]}
-    gon.points = @content.map{|e| e.get_map_info if e.methods.include?(:get_map_info) }.compact
-  end  
+    #todo limit
+    @content = @content_class.all
+    puts @section[0]
+
+    puts 'points', set_gon_points(@content_class).inspect
+  end
 
   def form
     puts params.inspect 
@@ -86,6 +102,10 @@ class MainController < ApplicationController
   private
     def sections_init
       @sections = SECTIONS
+      @section = SECTIONS.select{|k,v| k == params['section_type']}.first
+      if @section
+        @content_class = eval(@section[0].humanize)
+      end
     end
 end
 

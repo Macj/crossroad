@@ -63,10 +63,14 @@ Crossroad::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+  
+  #template part
   match "template", :controller => 'main', :action => 'template'
   match "category_template", :controller => 'main', :action => 'category_template'
-  
-  match "section/(:section)", :controller => 'main', :action => 'section', :as => :section
-  match "make_new_one", :controller => 'main', :action => 'form', :as => :section, :as => :main_form
+
+  # main part 
+  match "section/(:section_type)", :controller => 'main', :action => 'section', :as => :section
+  match "make_new_one", :controller => 'main', :action => 'form', :as => :main_form
+  match "map", :controller => 'main', :action => 'map', :as => :map
 
 end

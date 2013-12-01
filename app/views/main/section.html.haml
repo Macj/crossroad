@@ -24,15 +24,14 @@
   .main_right
     .view
       %span= "Вид"
-      %img.icon{:src => '/4.jpg'}
-      %img.icon{:src => '/4.jpg'}
-      %img.icon{:src => '/4.jpg'}
-      %img.icon#map_show_btn{:src => '/6.png'}
+      %img.icon#view1{:src => '/4.jpg'}
+      %img.icon#view2{:src => '/4.jpg'}
+      %img.icon#view3{:src => '/4.jpg'}
+      - unless ['person', 'article', 'project'].include? @section[0]
+        %img.icon#map_show_btn{:src => '/6.png'}
     .content
       #map_block.hidden
         #map_close_btn
         #map_container
       .content_block{:id => "#{@section[0]}_content"}
-        %ul.items.table
-        %ul.items.line
         = render :partial => "/#{@section[0].pluralize}/content", :locals => {:content => @content}

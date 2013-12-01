@@ -1,6 +1,9 @@
 .main_block
+  #picture
+    = link_to image_tag(@event.picture.url(:medium)), event_path(@event)
   #event_name
     %span= @event.name
+  %br
   #event_info
     %span= @event.category.name
     %br
@@ -9,8 +12,10 @@
     %span= @event.begin_date.strftime(" %H:%M %d.%m.%Y")
     = "-"
     %span= @event.end_date.strftime(" %H:%M %d.%m.%Y")
+  %br
   #event_body
     %span= @event.description
+  %br
   #event_source
     %span= @event.web_links
     %br

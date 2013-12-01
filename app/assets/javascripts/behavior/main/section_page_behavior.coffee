@@ -7,6 +7,20 @@ namespace "Main.SectionPageBehavior", (exports) ->
     block = document.getElementsByClassName('section_block')[0]
     $(block).toggle()
 
+  behavior_on_view_selector_click = (e) ->
+    e.preventDefault()
+    field = target_of_event e
+    content = document.getElementsByClassName('items')[0]
+    $(content).attr('class','items' )
+    switch $(field).attr('id')
+      when 'view1'
+        $(content).addClass('thumb')
+      when 'view2'
+        $(content).addClass('line')
+      when 'view3'
+        $(content).addClass('table')
+
+
   behavior_on_category_click = (e) ->
     e.preventDefault()
     field = target_of_event e
@@ -40,7 +54,11 @@ namespace "Main.SectionPageBehavior", (exports) ->
     #category filter behavior
     fields = document.getElementsByClassName('category_item')
     for field in fields
-      bind_event field, 'click', behavior_on_category_click    
+      bind_event field, 'click', behavior_on_category_click
+
+    for id in ['view1', 'view2', 'view3']
+      field = document.getElementById(id)
+      bind_event field, 'click', behavior_on_view_selector_click
     
     
 domReady ->

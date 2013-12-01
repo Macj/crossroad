@@ -1,15 +1,24 @@
+= javascript_include_tag "behavior/articles/form_behavior"
+= stylesheet_link_tag    "form", :media => "all"
+= flash[:errors]
+
 = form_for  article || Article.new,  :as => :article, multipart: true do |f|
   = f.label :category_id, 'Категория'
   = f.select :category_id, Category.all.map{|e| [e.name, e.id]}
   %br
   = f.label :type_id, 'Тип'
-  = f.select :type_id, Type.all.map{|e| [e.name, e.id]}
+  = f.select :type_id, ['']
+
+  %img.plus#type_plus_btn{:src => '/images/plus.png'}
+  #new_type_fields.hidden
+    = text_field_tag(:article_type_name, nil, :id => 'type_name',:placeholder => 'введите название типа')
+    = f.submit "Добавить", :id => 'add_type'
   %br
   = f.label :name, 'Название'
   = f.text_field :name
   %br
-  = f.label :autor, 'Автор'
-  = f.text_field :autor
+  = f.label :author, 'Автор'
+  = f.text_field :author
   %br
   = f.label :body, 'Содержание'
   = f.text_area :body
@@ -19,5 +28,8 @@
   %br
   = f.label :picture, 'Обложка'
   = f.file_field :picture
+  %br
+  = f.label :posted_at, 'Опубликовать - '
+  = f.text_field :posted_at, :placeholder => 'xx.xx.xxxx'
   %br
   = f.submit "Сохраніть"

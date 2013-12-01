@@ -1,9 +1,9 @@
 %ul.items.thumb
   - content.each do |item|
     %li.item{:category => "category_#{item.category_id}"}
-      %img.icon{:src => '/1.jpeg', :width=>"65", :height=>"65"}
+      = link_to "<img class='icon' src='#{ item.picture.url(:thumb) || '/3.jpeg'}' width='65' height='65' />".html_safe, project_path(item)
       .item_info 
-        %span.item_name= item.name
+        %span.item_name= link_to item.name, project_path(item)
         %p 
           %span= item.category.name
           %br

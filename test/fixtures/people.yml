@@ -3,13 +3,11 @@
 one:
   fio: MyString
   role: MyString
-  photo: 
   info: MyText
   activity: MyText
 
 two:
   fio: MyString
   role: MyString
-  photo: 
   info: MyText
   activity: MyText

@@ -1,0 +1,24 @@
+= javascript_include_tag "behavior/main/filter_behavior"
+= javascript_include_tag "behavior/_filters"
+= render :partial => '/main/map_includes'
+= javascript_include_tag "behavior/categories/map_behavior"
+= javascript_include_tag "behavior/main/map_page_behavior"
+#filters.hidden{:data => "#{@filters.map{|e| e.to_json}}"}
+.main_block
+  #sections
+    = render :partial => 'sections', :locals => {:sections => @sections}
+  .main_left
+    .category_block
+      %span Категории
+      - @categories.each do |category|
+        .category
+          %span.menu_item{:children => category.name + "children"}
+            = link_to category.name, category_path(category), :class => 'category_item', :id => "category_#{category.id}", :data => category.id
+          %ul{:id => category.name + "children"}
+            - category.children.each do |child|
+              %li= link_to child.name, category_path(child), :class => 'category_item', :id => "category_#{child.id}" , :data => child.id
+
+    = render :partial => 'filters', :locals => {:types => @types}
+  .main_right
+    .content
+      #map_container

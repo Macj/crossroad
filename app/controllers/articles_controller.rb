@@ -1,12 +1,11 @@
 class ArticlesController < ApplicationController
   protect_from_forgery
-
-   def index
-    @articles = Article.all
+  before_filter :set_articles
+  def index
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = @articles.find(params[:id]).first
   end
 
   def edit
@@ -28,13 +27,18 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
     if @article.save
       uploaded_io = params[:article][:picture]
-      File.open(Rails.root.join('data', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+      File.open(Rails.root.join('data', 'articles' ,uploaded_io.original_filename), 'wb') do |file|
         file.write(uploaded_io.read)
       end
-      redirect_to article_path(@article)
+      redirect_to section_path('article')
     else
       flash[:error] =  @article.errors.to_s
       redirect_to :action => :new
     end    
   end
+
+  private 
+    def set_articles
+      @articles = Article.all#Article.published
+    end
 end
