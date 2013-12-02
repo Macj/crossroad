@@ -24,3 +24,10 @@ namespace "Section.FilterBehavior", (exports) ->
     
 domReady ->
   Section.FilterBehavior.initialize()
+  Crossroad.Datepicker.initialize()
+  $("#end_date").datepicker(
+    rangeSelect: true
+  )
+  $("#begin_date").datepicker(
+    rangeSelect: true
+  )

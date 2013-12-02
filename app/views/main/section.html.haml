@@ -23,10 +23,10 @@
     = render :partial => 'filters', :locals => {:types => @types}
   .main_right
     .view
-      %span= "Вид"
-      %img.icon#view1{:src => '/4.jpg'}
-      %img.icon#view2{:src => '/4.jpg'}
-      %img.icon#view3{:src => '/4.jpg'}
+      .list_view_icon#view2
+      .thumb_view_icon#view1
+      .grid_view_icon#view3
+
       - unless ['person', 'article', 'project'].include? @section[0]
         %img.icon#map_show_btn{:src => '/6.png'}
     .content
