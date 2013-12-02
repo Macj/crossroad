@@ -1,15 +1,42 @@
+= javascript_include_tag "behavior/places/form_behavior"
+= stylesheet_link_tag    "form", :media => "all"
+= flash[:errors]
+
 = form_for  place || Place.new,  :as => :place do |f|
   = f.label :category_id, 'Категория'
   = f.select :category_id, Category.all.map{|e| [e.name, e.id]}
   %br
   = f.label :type_id, 'Тип'
-  = f.select :type_id, Type.all.map{|e| [e.name, e.id]}
+  = f.select :type_id, ['']
+  %img.plus#place_type_plus_btn{:src => '/images/plus.png'}
+  #place_new_type_fields.hidden
+    = text_field_tag(:event_type_name, nil, :id => 'place_type_name',:placeholder => 'введите название типа')
+    = f.submit "Добавить", :id => 'place_add_type'
+  %br
   %br
   = f.label :name, 'Название'
   = f.text_field :name
   %br
   = f.label :description, 'Описание'
   = f.text_area :description
+  %br
+
+  = f.fields_for :address, Address.new do |address_fields|
+    = address_fields.label :city, 'Город'
+    = address_fields.text_field :city 
+    %br
+    = address_fields.label :street, 'Улица'
+    = address_fields.text_field :street 
+    %br
+    = address_fields.label :building, 'Дом (корпус)'
+    = address_fields.text_field :building
+    %br
+    = address_fields.label :lat, 'Широта'
+    = address_fields.text_field :lat
+    %br
+    = address_fields.label :lng, 'Долгота'
+    = address_fields.text_field :lng
+
   %br
   = f.label :web_links, 'Источники'
   = f.text_area :web_links

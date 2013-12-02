@@ -30,6 +30,7 @@ class PlacesController < ApplicationController
     if @place.save
       redirect_to place_path(@place)
     else
+      puts @place.errors.inspect
       flash[:error] =  @place.errors.to_s
       redirect_to :action => :new
     end    

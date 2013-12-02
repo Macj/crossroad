@@ -33,7 +33,7 @@ class MainController < ApplicationController
     @types = Type.where(:section_type => @section[0])
     @filters = {section_type: @section[0]}
     #todo limit
-    @content = @content_class.all
+    @content = @content_class.order(:created_at).page(params[:page]).per(9)
     puts @section[0]
 
     puts 'points', set_gon_points(@content_class).inspect

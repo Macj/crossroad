@@ -1,9 +1,18 @@
+= javascript_include_tag "behavior/events/form_behavior"
+= stylesheet_link_tag    "form", :media => "all"
+= flash[:errors]
+
 = form_for  event || Event.new,  :as => :event do |f|
   = f.label :category_id, 'Категория'
   = f.select :category_id, Category.all.map{|e| [e.name, e.id]}
   %br
   = f.label :type_id, 'Тип'
-  = f.select :type_id, Type.all.map{|e| [e.name, e.id]}
+  = f.select :type_id, ['']
+  %img.plus#event_type_plus_btn{:src => '/images/plus.png'}
+  #event_new_type_fields.hidden
+    = text_field_tag(:event_type_name, nil, :id => 'event_type_name',:placeholder => 'введите название типа')
+    = f.submit "Добавить", :id => 'event_add_type'
+  %br
   %br
   = f.label :name, 'Название'
   = f.text_field :name

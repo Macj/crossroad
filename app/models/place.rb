@@ -6,15 +6,17 @@ class Place < ActiveRecord::Base
   include DateStructure
   include FileAttacheStructure
   
-  attr_accessible :category_id, :description, :galery_id, :name, :address_id, :type_id, :web_links
+  attr_accessible :category_id, :description, :galery_id, :name, :address_id, :type_id, :web_links, :address, :address_attributes
+
 
   belongs_to :type
   belongs_to :category
   belongs_to :address
+  accepts_nested_attributes_for :address
 
   validates :description, :presence => true #,
   validates :name, :presence => true #,
-  validates :address_id, :presence => true #,
+  validates :address, :presence => true #,
   validates :type_id, :presence => true #,
   validates :category_id, :presence => true #,
 

@@ -35,3 +35,4 @@
         #map_container
       .content_block{:id => "#{@section[0]}_content"}
         = render :partial => "/#{@section[0].pluralize}/content", :locals => {:content => @content}
+        = paginate @content

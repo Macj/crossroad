@@ -5,7 +5,7 @@ class Address < ActiveRecord::Base
   attr_accessible :building, :city, :street, :lat, :lng
 
   def get_info
-    unless self.lat || self.lng
+    unless !self.lat.blank? || !self.lng.blank?
       coordinates = GoogleGeocoder.get_coordinates(self)
       self.update_attributes(coordinates)
     end
