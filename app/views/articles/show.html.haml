@@ -9,7 +9,7 @@
     %span= @article.type.name if @article.type
   %br
   #article_body
-    %span= @article.body
+    %span= @article.body.html_safe
   %br
   .autor
     - info = @article.author_info

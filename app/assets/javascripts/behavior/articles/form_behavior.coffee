@@ -82,6 +82,11 @@ namespace "Article.FormBehavior", (exports) ->
 domReady ->
   Article.FormBehavior.initialize()
   Crossroad.Datepicker.initialize()
-  $("#article_posted_at").datepicker(
-    rangeSelect: true
+  $("#article_posted_at").datepicker()
+  #$("#article_body").markItUp(mySettings);
+
+
+  $(document).on('page:load', ->
+   window['rangy'].initialized = false
   )
+

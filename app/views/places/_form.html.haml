@@ -18,7 +18,7 @@
   = f.text_field :name
   %br
   = f.label :description, 'Описание'
-  = f.text_area :description
+  = f.text_area :description, :class => "tinymce"
   %br
 
   = f.fields_for :address, Address.new do |address_fields|

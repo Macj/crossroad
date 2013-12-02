@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = @articles.find(params[:id]).first
+    @article = @articles.find(params[:id])
   end
 
   def edit
@@ -39,6 +39,6 @@ class ArticlesController < ApplicationController
 
   private 
     def set_articles
-      @articles = Article.all#Article.published
+      @articles = Article.order(&:id)#Article.published
     end
 end

@@ -21,3 +21,4 @@
 //= require tools/toolbox
 //= require tools/xhr
 
+//= require tinymce
