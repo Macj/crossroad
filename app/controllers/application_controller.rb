@@ -5,9 +5,9 @@ class ApplicationController < ActionController::Base
   SECTIONS = {
     'article' => 'Статьи',
     'event'   => 'События',
-    'place'   => 'Места',
+#    'place'   => 'Места',
     'project' => 'Проекты',
-    'person'  => 'Лица',
+#    'person'  => 'Лица',
   }
 
   private

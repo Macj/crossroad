@@ -9,9 +9,9 @@
     %br
     %span= @event.type.name
     %br
-    %span= @event.begin_date.strftime(" %H:%M %d.%m.%Y")
+    %span= @event.start_at.strftime(" %H:%M %d.%m.%Y")
     = "-"
-    %span= @event.end_date.strftime(" %H:%M %d.%m.%Y")
+    %span= @event.end_at.strftime(" %H:%M %d.%m.%Y")
   %br
   #event_body
     %span= @event.description

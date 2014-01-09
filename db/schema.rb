@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(:version => 20131130092612) do
     t.integer  "place_id"
     t.integer  "galery_id"
     t.string   "name"
-    t.date     "begin_date"
-    t.date     "end_date"
+    t.date     "start_at"
+    t.date     "end_at"
     t.text     "description"
     t.text     "web_links"
     t.datetime "created_at",           :null => false

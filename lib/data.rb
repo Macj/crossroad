@@ -15,19 +15,19 @@ class Data #< ActiveRecord::Base
         content = content.where(:type_id => filters['type_id'])
       end
 
-      if !filters['begin_date'].blank? 
-        date = Date.parse(filters['begin_date'])
-        if @@content_class.has_column?('begin_date')
-          content = content.where(:begin_date => date)
+      if !filters['start_at'].blank? 
+        date = Date.parse(filters['start_at'])
+        if @@content_class.has_column?('start_at')
+          content = content.where(:start_at => date)
         else
           content = content.where("created_at >= ?", date)
         end
       end
 
-      if !filters['end_date'].blank?
-        date = Date.parse(filters['end_date'])
-        if @@content_class.has_column?('end_date')
-          content = content.where(:end_date => date)
+      if !filters['end_at'].blank?
+        date = Date.parse(filters['end_at'])
+        if @@content_class.has_column?('end_at')
+          content = content.where(:end_at => date)
         else
           content = content.where("created_at <= ?", date + 23.hours + 59.minutes)
         end

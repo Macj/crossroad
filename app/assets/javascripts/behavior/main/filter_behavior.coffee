@@ -23,11 +23,11 @@ namespace "Section.FilterBehavior", (exports) ->
       bind_event field, 'click', set_category
     
 domReady ->
-  Section.FilterBehavior.initialize()
   Crossroad.Datepicker.initialize()
-  $("#end_date").datepicker(
+  $("#end_at").datepicker(
     rangeSelect: true
   )
-  $("#begin_date").datepicker(
+  $("#start_at").datepicker(
     rangeSelect: true
   )
+  Section.FilterBehavior.initialize()

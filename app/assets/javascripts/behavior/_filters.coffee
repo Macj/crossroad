@@ -1,5 +1,5 @@
 namespace "FiltersBehavior", (exports) ->
-  FIELDS = ['type_id', 'begin_date', 'end_date']
+  FIELDS = ['type_id', 'start_at', 'end_at']
 
   filter_field_behavior = (e) ->
     e.preventDefault()
@@ -16,7 +16,8 @@ namespace "FiltersBehavior", (exports) ->
     # set behaviors
     for id in FIELDS
       field = document.getElementById(id)
-      bind_event field, 'change', filter_field_behavior
+      #bind_event field, 'change', filter_field_behavior
+      $(field).on('change', filter_field_behavior)
 
     
 domReady ->

@@ -30,17 +30,26 @@ Article.create( :name => "arty2", :category_id => 3, :author_id => nil, :body =>
 Article.create( :name => "Статья3", :category_id => 4, :author_id => nil, :body => "Test body for test article3", :sources => 'test.article3.dp.ua',  :author => 'Crossroad', :type_id => 2)
 Article.create( :name => "Статья4", :category_id => 5, :author_id => nil, :body => "Test body for test article4", :sources => 'test.article4.dp.ua',  :author => 'Crossroad', :type_id => 2)
 
-Event.create(category_id: 2, type_id: 1,  name: 'Собтие', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(2).name} типа #{Type.find(1).name}", web_links: "event_link.dp.ua")
-Event.create(category_id: 2, type_id: 1,  name: 'Собтие1', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(2).name} типа #{Type.find(1).name}", web_links: "event_link.dp.ua")
-Event.create(category_id: 3, type_id: 2,  name: 'Собтие2', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(3).name} типа #{Type.find(2).name}", web_links: "event_link.dp.ua")
-Event.create(category_id: 3, type_id: 2,  name: 'Собтие3', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(3).name} типа #{Type.find(2).name}", web_links: "event_link.dp.ua")
-Event.create(category_id: 4, type_id: 3,  name: 'Собтие4', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(4).name} типа #{Type.find(3).name}", web_links: "event_link.dp.ua")
-Event.create(category_id: 4, type_id: 4,  name: 'Собтие5', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(4).name} типа #{Type.find(4).name}", web_links: "event_link.dp.ua")
-Event.create(category_id: 5, type_id: 5,  name: 'Собтие6', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(5).name} типа #{Type.find(5).name}", web_links: "event_link.dp.ua")
-Event.create(category_id: 5, type_id: 6,  name: 'Собтие7', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(5).name} типа #{Type.find(6).name}", web_links: "event_link.dp.ua")
-Event.create(category_id: 6, type_id: 7,  name: 'Собтие8', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(6).name} типа #{Type.find(7).name}", web_links: "event_link.dp.ua")
-Event.create(category_id: 7, type_id: 8,  name: 'Собтие9', begin_date: Time.now, end_date: Time.now + 1.day, description: "Событие себе из категории #{Category.find(7).name} типа #{Type.find(8).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 2, type_id: 1,  name: 'Собтие', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(2).name} типа #{Type.find(1).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 2, type_id: 1,  name: 'Собтие1', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(2).name} типа #{Type.find(1).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 3, type_id: 2,  name: 'Собтие2', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(3).name} типа #{Type.find(2).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 3, type_id: 2,  name: 'Собтие3', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(3).name} типа #{Type.find(2).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 4, type_id: 3,  name: 'Собтие4', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(4).name} типа #{Type.find(3).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 4, type_id: 4,  name: 'Собтие5', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(4).name} типа #{Type.find(4).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 5, type_id: 5,  name: 'Собтие6', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(5).name} типа #{Type.find(5).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 5, type_id: 6,  name: 'Собтие7', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(5).name} типа #{Type.find(6).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 6, type_id: 7,  name: 'Собтие8', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(6).name} типа #{Type.find(7).name}", web_links: "event_link.dp.ua")
+Event.create(category_id: 7, type_id: 8,  name: 'Собтие9', start_at: Time.now, end_at: Time.now + 1.day, description: "Событие себе из категории #{Category.find(7).name} типа #{Type.find(8).name}", web_links: "event_link.dp.ua")
 
+
+Address.create(:building => '50A', :city => 'Днепропетровск', :street => 'Совхозная')
+Address.create(:building => '50', :city => 'Днепропетровск', :street => 'Совхозная')
+Address.create(:building => '52', :city => 'Днепропетровск', :street => 'Совхозная')
+Address.create(:building => '48', :city => 'Днепропетровск', :street => 'Совхозная')
+Address.create(:building => '46', :city => 'Днепропетровск', :street => 'Совхозная')
+Address.create(:building => '44', :city => 'Днепропетровск', :street => 'Совхозная')
+Address.create(:building => '42', :city => 'Днепропетровск', :street => 'Совхозная')
+Address.create(:building => '40', :city => 'Днепропетровск', :street => 'Совхозная')
 
 Place.create(name: 'Тестовое место', category_id: 2, type_id: 1,  description: "Мысто себе из категории #{Category.find(2).name} типа #{Type.find(1).name}", web_links: "place.dp.ua", :address_id => 1)
 Place.create(name: 'Тестовое место', category_id: 3, type_id: 2,  description: "Мысто себе из категории #{Category.find(3).name} типа #{Type.find(2).name}", web_links: "place.dp.ua", :address_id => 2)
@@ -59,13 +68,6 @@ Project.create( name: "Проект6", category_id: 6, type_id: 5,  description:
 Project.create( name: "Проект7", category_id: 7, type_id: 6,  description: "Проект себе такой из категории #{Category.find(7).name} типа #{Type.find(6).name}", web_links: "project.dp.ua")
 Project.create( name: "Проект8", category_id: 8, type_id: 7,  description: "Проект себе такой из категории #{Category.find(8).name} типа #{Type.find(7).name}", web_links: "project.dp.ua")
 
-Address.create(:building => '50A', :city => 'Днепропетровск', :street => 'Совхозная')
-Address.create(:building => '50', :city => 'Днепропетровск', :street => 'Совхозная')
-Address.create(:building => '52', :city => 'Днепропетровск', :street => 'Совхозная')
-Address.create(:building => '48', :city => 'Днепропетровск', :street => 'Совхозная')
-Address.create(:building => '46', :city => 'Днепропетровск', :street => 'Совхозная')
-Address.create(:building => '44', :city => 'Днепропетровск', :street => 'Совхозная')
-Address.create(:building => '42', :city => 'Днепропетровск', :street => 'Совхозная')
-Address.create(:building => '40', :city => 'Днепропетровск', :street => 'Совхозная')
+
 
 

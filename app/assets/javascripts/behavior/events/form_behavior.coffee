@@ -82,10 +82,10 @@ namespace "Event.FormBehavior", (exports) ->
 domReady ->
   Event.FormBehavior.initialize()
   Crossroad.Datepicker.initialize()
-  $("#event_begin_date").datepicker(
+  $("#event_start_at").datepicker(
     rangeSelect: true
   )
-  $("#event_end_date").datepicker(
+  $("#event_end_at").datepicker(
     rangeSelect: true
   )
 

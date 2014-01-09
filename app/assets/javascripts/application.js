@@ -22,3 +22,4 @@
 //= require tools/xhr
 
 //= require tinymce
+//= require event_calendar

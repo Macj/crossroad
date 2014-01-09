@@ -6,8 +6,8 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :place_id
       t.integer :galery_id
       t.string :name
-      t.date :begin_date
-      t.date :end_date
+      t.datetime :start_at
+      t.datetime :end_at
       t.text :description
       t.text :web_links
       

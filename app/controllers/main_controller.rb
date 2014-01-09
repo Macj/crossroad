@@ -61,8 +61,8 @@ class MainController < ApplicationController
       when "event"
         event = element[:event]
         parameters.merge!({
-          :begin_date  => event[:begin_date],
-          :end_date    => event[:end_date],
+          :start_at  => event[:start_at],
+          :end_at    => event[:end_at],
           :description => event[:description],
           :web_links   => event[:web_links]
         })
